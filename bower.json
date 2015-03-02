@@ -1,0 +1,27 @@
+{
+  "name": "s10-beta",
+  "version": "0.0.0",
+  "authors": [
+    "josh@stageten.tv"
+  ],
+  "description": "S10 Beta Portal",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "stageten.tv",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.2.2",
+    "normalize-scss": "~3.0.2"
+  },
+  "devDependencies": {
+    "html5shiv": "~3.7.2",
+    "breakpoint-sass": "~2.5.0"
+  }
+}

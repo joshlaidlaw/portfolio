@@ -1,0 +1,74 @@
+//
+// Grid system
+// --------------------------------------------------
+
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+.container {
+  @include container;
+
+  @include breakpoint($small) {
+    @include container($container-small);
+  }
+
+  @include breakpoint($medium) {
+    @include container($container-medium);
+  }
+
+  @include breakpoint($large) {
+    @include container($container-large);
+  } 
+
+  @include breakpoint($xlarge) {
+    @include container($container-xlarge);
+  } 
+}
+
+@mixin make-grid-columns {
+
+  @for $i from 1 through $grid-columns {
+    .col#{$i} {
+      overflow: hidden;
+      @include span($grid-columns of $grid-columns);
+
+      @include breakpoint($small) {
+        @if $i == 3 {
+          @debug "$i = 3";
+          @include span(6 of $grid-columns);
+          &.last,
+          &:nth-child(even) {
+            @include span(6 of $grid-columns last);
+          }
+        } @else {
+          @include span($i of $grid-columns);
+          &.last {
+            @include span($i of $grid-columns last);
+          }
+        }
+      }
+
+      @include breakpoint($medium) {
+        @include span($i of $grid-columns);
+        &:nth-child(even) {
+          @include span($i of $grid-columns);
+        }
+        &.last {
+          @include span($i of $grid-columns last);
+        }
+      }
+
+      @include breakpoint($large) {
+        @include span($i of $grid-columns);
+
+        &.last {
+          @include span($i of $grid-columns last);
+        }
+      } 
+    }
+  }
+}
+
+@include make-grid-columns;
