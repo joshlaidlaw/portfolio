@@ -2,9 +2,12 @@
 @import "../bower_components/susy/sass/_susy";
 @import "../bower_components/normalize-scss/_normalize";
 @import "../bower_components/breakpoint-sass/stylesheets/_breakpoint";
+@debug "import repsoinsive nav";
+@import "/css/responsive-nav.css";
 
 @import "partials/_base";
 @import "partials/_colours";
+@import "helpers/_reset";
 @import "partials/_typography";
 
 // Components
@@ -16,3 +19,12 @@
 @import "partials/_sidebar";
 
 //Pages
+
+
+hr {
+	background: url("/img/hr-divider.png") repeat-x;
+	background: url("/img/hr-divider.svg") repeat-x;
+	border : 0;
+	height: 4px;
+	margin : 1em 0;
+}

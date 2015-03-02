@@ -36,7 +36,6 @@
 
       @include breakpoint($small) {
         @if $i == 3 {
-          @debug "$i = 3";
           @include span(6 of $grid-columns);
           &.last,
           &:nth-child(even) {

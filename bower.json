@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "html5shiv": "~3.7.2",
-    "breakpoint-sass": "~2.5.0"
+    "breakpoint-sass": "~2.5.0",
+    "responsive-nav": "https://github.com/viljamis/responsive-nav.js.git#~1.0.34"
   }
 }

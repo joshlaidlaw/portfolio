@@ -18,11 +18,18 @@
     <div class="container">
 
       <header class="col12">
-        <h1 class="rule"><span>Nav</span></h1> 
+        <nav class="nav-collapse">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
       </header>
 
       <section class="slider col12">
-        <h1 class="rule"><span>Slider</span></h1>
+        <h1><span>Slider</span></h1>
       </section>
 
       <section class="about col12">
@@ -61,7 +68,7 @@
           </div>
         </div>
         <div class="testimonials col12">
-          <h1 class="rule"><span>Testimonials</h1>
+          <h1><span>Testimonials</span></h1>
         </div>
       </section>
 
@@ -89,7 +96,7 @@
           <p>Map</p>
         </div>
         <div class="col5 last">
-          <h1 class="rule"><span>Contact</span></h1>
+          <h1><span>Contact</span></h1>
         </div>
       </section>
 
@@ -109,16 +116,20 @@
       </section>
 
       <section class="community col12">
-        <h1 class="rule"><span>Community</span></h1>
+        <h1><span>Community</span></h1>
       </section>
 
       <footer class="col12">
-        <h1 class="rule"><span>Footer</span></h1>
+        <h1><span>Footer</span></h1>
       </footer>
     </div>
 
 
-    <script src="js/main.js"></script>
+    <script src="js/responsive-nav.min.js"></script>
+
+    <script>
+        var nav = responsiveNav(".nav-collapse");
+    </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
