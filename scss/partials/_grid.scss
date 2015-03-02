@@ -1,12 +1,6 @@
-//
 // Grid system
-// --------------------------------------------------
-
 
 // Container widths
-//
-// Set the container width, and override it for fixed navbars in media queries.
-
 .container {
   @include container;
 
@@ -31,7 +25,6 @@
 
   @for $i from 1 through $grid-columns {
     .col#{$i} {
-      overflow: hidden;
       @include span($grid-columns of $grid-columns);
 
       @include breakpoint($small) {
@@ -54,6 +47,7 @@
         &:nth-child(even) {
           @include span($i of $grid-columns);
         }
+
         &.last {
           @include span($i of $grid-columns last);
         }
@@ -65,7 +59,9 @@
         &.last {
           @include span($i of $grid-columns last);
         }
-      } 
+      }
+
+      overflow: hidden;
     }
   }
 }

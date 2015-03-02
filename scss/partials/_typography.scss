@@ -1,36 +1,40 @@
 h1 {
-	display: block;
-	font-size: 24px;
-	line-height: 24px;
-	font-weight: bold;
-	margin: 0 auto;
-	text-align: center;
-	text-transform: uppercase;
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 24px;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .rule {
   line-height: .25;
   text-align: center;
-}
-.rule span {
-	background-color: $white;
-	display: inline-block;
-	width: auto;
-	padding: 30px;
-  position: relative;  
-}
-.rule span:before,
-.rule span:after {
-  content: "";
-  position: absolute;
-  height: 30px;
-  border-bottom: 1px solid $black;
-  top: 0;
-  width: 800px;
-}
-.rule span:before {
-  right: 100%;
-}
-.rule span:after {
-  left: 100%;
+
+  span {
+    background-color: $white;
+    display: inline-block;
+    padding: 30px;
+    position: relative; 
+    width: auto;
+    
+    &:before,
+    &:after {
+      border-bottom: 1px solid $black;
+      content: '';
+      height: 30px;
+      position: absolute;
+      top: 0;
+      width: 800px;
+    }
+
+    &:before {
+      right: 100%;
+    }
+
+    &:after {
+      left: 100%;
+    }
+  }
 }
