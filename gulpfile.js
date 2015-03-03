@@ -1,10 +1,12 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
-var filter      = require('gulp-filter');
+var gulpFilter      = require('gulp-filter');
 var gulpIgnore = require('gulp-ignore');
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 
+var filter = gulpFilter(['*', '!src/vendor', '!**/Gruntfile.js', '!**/gulpfile.js']);
+var condition = './Gruntfile.js';
 
 // CSS/SCSS
 var sass = require('gulp-sass');
@@ -45,6 +47,7 @@ gulp.task('sass', function () {
 
 gulp.task('scripts', function() {
   return gulp.src('bower_components/**/*.js')
+    .pipe(gulpIgnore.exclude(condition))
     .pipe(concat('main.js'))
     .pipe(gulp.dest('dist/js'))
     .pipe(reload({stream:true}));

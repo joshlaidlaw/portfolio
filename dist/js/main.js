@@ -1,4 +1,66 @@
 /*global module:false*/
+module.exports = function(grunt){
+
+	
+	// Project configuration.
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
+		bower: grunt.file.readJSON('bower.json'),
+		copy: {
+			demo: {
+				files: [
+					{expand: true, src: ['src/*'], dest: 'dist/', filter: 'isFile', flatten: true}
+				]
+			}
+		},
+
+		uglify: {
+			options: {
+				beautify: {
+					ascii_only : true
+				},
+				preserveComments: 'some'
+			},
+			html5shiv: {
+				files: [{
+					expand: true,     // Enable dynamic expansion.
+					cwd: 'src/',      // Src matches are relative to this path.
+					src: ['**/*.js'], // Actual pattern(s) to match.
+					dest: 'dist/',   // Destination path prefix.
+					ext: '.min.js'
+				}]
+			}
+		},
+		watch: {
+			js: {
+				files: ['src/**/*.js'],
+				tasks: ['copy', 'uglify', 'bytesize']
+			}
+		},
+		bytesize: {
+			all: {
+				src: [
+					'dist/**.min.js'
+				]
+			}
+		}
+	});
+
+	
+	// Default task.
+
+	
+
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-bytesize');
+
+	grunt.registerTask('default', ['copy', 'uglify', 'bytesize', 'watch']);
+
+};
+
+/*global module:false*/
 module.exports = function (grunt) {
 
   "use strict";
@@ -855,68 +917,6 @@ module.exports = function (grunt) {
 }(document, window, 0));
 /*! responsive-nav.js 1.0.34, copyright (c) 2014 @viljamis, MIT license */
 !function(a,b,c){"use strict";var d=function(d,e){var f=!!b.getComputedStyle;f||(b.getComputedStyle=function(a){return this.el=a,this.getPropertyValue=function(b){var c=/(\-([a-z]){1})/g;return"float"===b&&(b="styleFloat"),c.test(b)&&(b=b.replace(c,function(){return arguments[2].toUpperCase()})),a.currentStyle[b]?a.currentStyle[b]:null},this});var g,h,i,j,k,l,m=function(a,b,c,d){if("addEventListener"in a)try{a.addEventListener(b,c,d)}catch(e){if("object"!=typeof c||!c.handleEvent)throw e;a.addEventListener(b,function(a){c.handleEvent.call(c,a)},d)}else"attachEvent"in a&&("object"==typeof c&&c.handleEvent?a.attachEvent("on"+b,function(){c.handleEvent.call(c)}):a.attachEvent("on"+b,c))},n=function(a,b,c,d){if("removeEventListener"in a)try{a.removeEventListener(b,c,d)}catch(e){if("object"!=typeof c||!c.handleEvent)throw e;a.removeEventListener(b,function(a){c.handleEvent.call(c,a)},d)}else"detachEvent"in a&&("object"==typeof c&&c.handleEvent?a.detachEvent("on"+b,function(){c.handleEvent.call(c)}):a.detachEvent("on"+b,c))},o=function(a){if(a.children.length<1)throw new Error("The Nav container has no containing elements");for(var b=[],c=0;c<a.children.length;c++)1===a.children[c].nodeType&&b.push(a.children[c]);return b},p=function(a,b){for(var c in b)a.setAttribute(c,b[c])},q=function(a,b){0!==a.className.indexOf(b)&&(a.className+=" "+b,a.className=a.className.replace(/(^\s*)|(\s*$)/g,""))},r=function(a,b){var c=new RegExp("(\\s|^)"+b+"(\\s|$)");a.className=a.className.replace(c," ").replace(/(^\s*)|(\s*$)/g,"")},s=function(a,b,c){for(var d=0;d<a.length;d++)b.call(c,d,a[d])},t=a.createElement("style"),u=a.documentElement,v=function(b,c){var d;this.options={animate:!0,transition:284,label:"Menu",insert:"before",customToggle:"",closeOnNavClick:!1,openPos:"relative",navClass:"nav-collapse",navActiveClass:"js-nav-active",jsClass:"js",init:function(){},open:function(){},close:function(){}};for(d in c)this.options[d]=c[d];if(q(u,this.options.jsClass),this.wrapperEl=b.replace("#",""),a.getElementById(this.wrapperEl))this.wrapper=a.getElementById(this.wrapperEl);else{if(!a.querySelector(this.wrapperEl))throw new Error("The nav element you are trying to select doesn't exist");this.wrapper=a.querySelector(this.wrapperEl)}this.wrapper.inner=o(this.wrapper),h=this.options,g=this.wrapper,this._init(this)};return v.prototype={destroy:function(){this._removeStyles(),r(g,"closed"),r(g,"opened"),r(g,h.navClass),r(g,h.navClass+"-"+this.index),r(u,h.navActiveClass),g.removeAttribute("style"),g.removeAttribute("aria-hidden"),n(b,"resize",this,!1),n(b,"focus",this,!1),n(a.body,"touchmove",this,!1),n(i,"touchstart",this,!1),n(i,"touchend",this,!1),n(i,"mouseup",this,!1),n(i,"keyup",this,!1),n(i,"click",this,!1),h.customToggle?i.removeAttribute("aria-hidden"):i.parentNode.removeChild(i)},toggle:function(){j===!0&&(l?this.close():this.open(),this._enablePointerEvents())},open:function(){l||(r(g,"closed"),q(g,"opened"),q(u,h.navActiveClass),q(i,"active"),g.style.position=h.openPos,p(g,{"aria-hidden":"false"}),l=!0,h.open())},close:function(){l&&(q(g,"closed"),r(g,"opened"),r(u,h.navActiveClass),r(i,"active"),p(g,{"aria-hidden":"true"}),h.animate?(j=!1,setTimeout(function(){g.style.position="absolute",j=!0},h.transition+10)):g.style.position="absolute",l=!1,h.close())},resize:function(){"none"!==b.getComputedStyle(i,null).getPropertyValue("display")?(k=!0,p(i,{"aria-hidden":"false"}),g.className.match(/(^|\s)closed(\s|$)/)&&(p(g,{"aria-hidden":"true"}),g.style.position="absolute"),this._createStyles(),this._calcHeight()):(k=!1,p(i,{"aria-hidden":"true"}),p(g,{"aria-hidden":"false"}),g.style.position=h.openPos,this._removeStyles())},handleEvent:function(a){var c=a||b.event;switch(c.type){case"touchstart":this._onTouchStart(c);break;case"touchmove":this._onTouchMove(c);break;case"touchend":case"mouseup":this._onTouchEnd(c);break;case"click":this._preventDefault(c);break;case"keyup":this._onKeyUp(c);break;case"focus":case"resize":this.resize(c)}},_init:function(){this.index=c++,q(g,h.navClass),q(g,h.navClass+"-"+this.index),q(g,"closed"),j=!0,l=!1,this._closeOnNavClick(),this._createToggle(),this._transitions(),this.resize();var d=this;setTimeout(function(){d.resize()},20),m(b,"resize",this,!1),m(b,"focus",this,!1),m(a.body,"touchmove",this,!1),m(i,"touchstart",this,!1),m(i,"touchend",this,!1),m(i,"mouseup",this,!1),m(i,"keyup",this,!1),m(i,"click",this,!1),h.init()},_createStyles:function(){t.parentNode||(t.type="text/css",a.getElementsByTagName("head")[0].appendChild(t))},_removeStyles:function(){t.parentNode&&t.parentNode.removeChild(t)},_createToggle:function(){if(h.customToggle){var b=h.customToggle.replace("#","");if(a.getElementById(b))i=a.getElementById(b);else{if(!a.querySelector(b))throw new Error("The custom nav toggle you are trying to select doesn't exist");i=a.querySelector(b)}}else{var c=a.createElement("a");c.innerHTML=h.label,p(c,{href:"#","class":"nav-toggle"}),"after"===h.insert?g.parentNode.insertBefore(c,g.nextSibling):g.parentNode.insertBefore(c,g),i=c}},_closeOnNavClick:function(){if(h.closeOnNavClick){var a=g.getElementsByTagName("a"),b=this;s(a,function(c){m(a[c],"click",function(){k&&b.toggle()},!1)})}},_preventDefault:function(a){return a.preventDefault?(a.stopImmediatePropagation&&a.stopImmediatePropagation(),a.preventDefault(),a.stopPropagation(),!1):void(a.returnValue=!1)},_onTouchStart:function(b){this._preventDefault(b),q(a.body,"disable-pointer-events"),this.startX=b.touches[0].clientX,this.startY=b.touches[0].clientY,this.touchHasMoved=!1,n(i,"mouseup",this,!1)},_onTouchMove:function(a){(Math.abs(a.touches[0].clientX-this.startX)>10||Math.abs(a.touches[0].clientY-this.startY)>10)&&(this._enablePointerEvents(),this.touchHasMoved=!0)},_onTouchEnd:function(c){if(this._preventDefault(c),k&&!this.touchHasMoved){if("touchend"===c.type)return this.toggle(),void("after"===h.insert&&setTimeout(function(){r(a.body,"disable-pointer-events")},h.transition+300));var d=c||b.event;3!==d.which&&2!==d.button&&this.toggle()}},_onKeyUp:function(a){var c=a||b.event;13===c.keyCode&&this.toggle()},_enablePointerEvents:function(){r(a.body,"disable-pointer-events")},_transitions:function(){if(h.animate){var a=g.style,b="max-height "+h.transition+"ms";a.WebkitTransition=b,a.MozTransition=b,a.OTransition=b,a.transition=b}},_calcHeight:function(){for(var a=0,b=0;b<g.inner.length;b++)a+=g.inner[b].offsetHeight;var c="."+h.jsClass+" ."+h.navClass+"-"+this.index+".opened{max-height:"+a+"px !important} ."+h.jsClass+" .disable-pointer-events{pointer-events:none !important} ."+h.jsClass+" ."+h.navClass+"-"+this.index+".opened.dropdown-active {max-height:9999px !important}";t.styleSheet?t.styleSheet.cssText=c:t.innerHTML=c,c=""}},new v(d,e)};b.responsiveNav=d}(document,window,0);
-
-/*global module:false*/
-module.exports = function(grunt){
-
-	
-	// Project configuration.
-	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
-		bower: grunt.file.readJSON('bower.json'),
-		copy: {
-			demo: {
-				files: [
-					{expand: true, src: ['src/*'], dest: 'dist/', filter: 'isFile', flatten: true}
-				]
-			}
-		},
-
-		uglify: {
-			options: {
-				beautify: {
-					ascii_only : true
-				},
-				preserveComments: 'some'
-			},
-			html5shiv: {
-				files: [{
-					expand: true,     // Enable dynamic expansion.
-					cwd: 'src/',      // Src matches are relative to this path.
-					src: ['**/*.js'], // Actual pattern(s) to match.
-					dest: 'dist/',   // Destination path prefix.
-					ext: '.min.js'
-				}]
-			}
-		},
-		watch: {
-			js: {
-				files: ['src/**/*.js'],
-				tasks: ['copy', 'uglify', 'bytesize']
-			}
-		},
-		bytesize: {
-			all: {
-				src: [
-					'dist/**.min.js'
-				]
-			}
-		}
-	});
-
-	
-	// Default task.
-
-	
-
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-bytesize');
-
-	grunt.registerTask('default', ['copy', 'uglify', 'bytesize', 'watch']);
-
-};
 
 (function(){
     'use strict';    
@@ -2681,497 +2681,6 @@ module.exports = function(grunt){
 
 }(document, window, 0));
 !function(a,b,c){"use strict";var d=function(d,e){var f=!!b.getComputedStyle;f||(b.getComputedStyle=function(a){return this.el=a,this.getPropertyValue=function(b){var c=/(\-([a-z]){1})/g;return"float"===b&&(b="styleFloat"),c.test(b)&&(b=b.replace(c,function(){return arguments[2].toUpperCase()})),a.currentStyle[b]?a.currentStyle[b]:null},this});var g,h,i,j,k,l,m=function(a,b,c,d){if("addEventListener"in a)try{a.addEventListener(b,c,d)}catch(e){if("object"!=typeof c||!c.handleEvent)throw e;a.addEventListener(b,function(a){c.handleEvent.call(c,a)},d)}else"attachEvent"in a&&("object"==typeof c&&c.handleEvent?a.attachEvent("on"+b,function(){c.handleEvent.call(c)}):a.attachEvent("on"+b,c))},n=function(a,b,c,d){if("removeEventListener"in a)try{a.removeEventListener(b,c,d)}catch(e){if("object"!=typeof c||!c.handleEvent)throw e;a.removeEventListener(b,function(a){c.handleEvent.call(c,a)},d)}else"detachEvent"in a&&("object"==typeof c&&c.handleEvent?a.detachEvent("on"+b,function(){c.handleEvent.call(c)}):a.detachEvent("on"+b,c))},o=function(a){if(a.children.length<1)throw new Error("The Nav container has no containing elements");for(var b=[],c=0;c<a.children.length;c++)1===a.children[c].nodeType&&b.push(a.children[c]);return b},p=function(a,b){for(var c in b)a.setAttribute(c,b[c])},q=function(a,b){0!==a.className.indexOf(b)&&(a.className+=" "+b,a.className=a.className.replace(/(^\s*)|(\s*$)/g,""))},r=function(a,b){var c=new RegExp("(\\s|^)"+b+"(\\s|$)");a.className=a.className.replace(c," ").replace(/(^\s*)|(\s*$)/g,"")},s=function(a,b,c){for(var d=0;d<a.length;d++)b.call(c,d,a[d])},t=a.createElement("style"),u=a.documentElement,v=function(b,c){var d;this.options={animate:!0,transition:284,label:"Menu",insert:"before",customToggle:"",closeOnNavClick:!1,openPos:"relative",navClass:"nav-collapse",navActiveClass:"js-nav-active",jsClass:"js",init:function(){},open:function(){},close:function(){}};for(d in c)this.options[d]=c[d];if(q(u,this.options.jsClass),this.wrapperEl=b.replace("#",""),a.getElementById(this.wrapperEl))this.wrapper=a.getElementById(this.wrapperEl);else{if(!a.querySelector(this.wrapperEl))throw new Error("The nav element you are trying to select doesn't exist");this.wrapper=a.querySelector(this.wrapperEl)}this.wrapper.inner=o(this.wrapper),h=this.options,g=this.wrapper,this._init(this)};return v.prototype={destroy:function(){this._removeStyles(),r(g,"closed"),r(g,"opened"),r(g,h.navClass),r(g,h.navClass+"-"+this.index),r(u,h.navActiveClass),g.removeAttribute("style"),g.removeAttribute("aria-hidden"),n(b,"resize",this,!1),n(b,"focus",this,!1),n(a.body,"touchmove",this,!1),n(i,"touchstart",this,!1),n(i,"touchend",this,!1),n(i,"mouseup",this,!1),n(i,"keyup",this,!1),n(i,"click",this,!1),h.customToggle?i.removeAttribute("aria-hidden"):i.parentNode.removeChild(i)},toggle:function(){j===!0&&(l?this.close():this.open(),this._enablePointerEvents())},open:function(){l||(r(g,"closed"),q(g,"opened"),q(u,h.navActiveClass),q(i,"active"),g.style.position=h.openPos,p(g,{"aria-hidden":"false"}),l=!0,h.open())},close:function(){l&&(q(g,"closed"),r(g,"opened"),r(u,h.navActiveClass),r(i,"active"),p(g,{"aria-hidden":"true"}),h.animate?(j=!1,setTimeout(function(){g.style.position="absolute",j=!0},h.transition+10)):g.style.position="absolute",l=!1,h.close())},resize:function(){"none"!==b.getComputedStyle(i,null).getPropertyValue("display")?(k=!0,p(i,{"aria-hidden":"false"}),g.className.match(/(^|\s)closed(\s|$)/)&&(p(g,{"aria-hidden":"true"}),g.style.position="absolute"),this._createStyles(),this._calcHeight()):(k=!1,p(i,{"aria-hidden":"true"}),p(g,{"aria-hidden":"false"}),g.style.position=h.openPos,this._removeStyles())},handleEvent:function(a){var c=a||b.event;switch(c.type){case"touchstart":this._onTouchStart(c);break;case"touchmove":this._onTouchMove(c);break;case"touchend":case"mouseup":this._onTouchEnd(c);break;case"click":this._preventDefault(c);break;case"keyup":this._onKeyUp(c);break;case"focus":case"resize":this.resize(c)}},_init:function(){this.index=c++,q(g,h.navClass),q(g,h.navClass+"-"+this.index),q(g,"closed"),j=!0,l=!1,this._closeOnNavClick(),this._createToggle(),this._transitions(),this.resize();var d=this;setTimeout(function(){d.resize()},20),m(b,"resize",this,!1),m(b,"focus",this,!1),m(a.body,"touchmove",this,!1),m(i,"touchstart",this,!1),m(i,"touchend",this,!1),m(i,"mouseup",this,!1),m(i,"keyup",this,!1),m(i,"click",this,!1),h.init()},_createStyles:function(){t.parentNode||(t.type="text/css",a.getElementsByTagName("head")[0].appendChild(t))},_removeStyles:function(){t.parentNode&&t.parentNode.removeChild(t)},_createToggle:function(){if(h.customToggle){var b=h.customToggle.replace("#","");if(a.getElementById(b))i=a.getElementById(b);else{if(!a.querySelector(b))throw new Error("The custom nav toggle you are trying to select doesn't exist");i=a.querySelector(b)}}else{var c=a.createElement("a");c.innerHTML=h.label,p(c,{href:"#","class":"nav-toggle"}),"after"===h.insert?g.parentNode.insertBefore(c,g.nextSibling):g.parentNode.insertBefore(c,g),i=c}},_closeOnNavClick:function(){if(h.closeOnNavClick){var a=g.getElementsByTagName("a"),b=this;s(a,function(c){m(a[c],"click",function(){k&&b.toggle()},!1)})}},_preventDefault:function(a){return a.preventDefault?(a.stopImmediatePropagation&&a.stopImmediatePropagation(),a.preventDefault(),a.stopPropagation(),!1):void(a.returnValue=!1)},_onTouchStart:function(b){this._preventDefault(b),q(a.body,"disable-pointer-events"),this.startX=b.touches[0].clientX,this.startY=b.touches[0].clientY,this.touchHasMoved=!1,n(i,"mouseup",this,!1)},_onTouchMove:function(a){(Math.abs(a.touches[0].clientX-this.startX)>10||Math.abs(a.touches[0].clientY-this.startY)>10)&&(this._enablePointerEvents(),this.touchHasMoved=!0)},_onTouchEnd:function(c){if(this._preventDefault(c),k&&!this.touchHasMoved){if("touchend"===c.type)return this.toggle(),void("after"===h.insert&&setTimeout(function(){r(a.body,"disable-pointer-events")},h.transition+300));var d=c||b.event;3!==d.which&&2!==d.button&&this.toggle()}},_onKeyUp:function(a){var c=a||b.event;13===c.keyCode&&this.toggle()},_enablePointerEvents:function(){r(a.body,"disable-pointer-events")},_transitions:function(){if(h.animate){var a=g.style,b="max-height "+h.transition+"ms";a.WebkitTransition=b,a.MozTransition=b,a.OTransition=b,a.transition=b}},_calcHeight:function(){for(var a=0,b=0;b<g.inner.length;b++)a+=g.inner[b].offsetHeight;var c="."+h.jsClass+" ."+h.navClass+"-"+this.index+".opened{max-height:"+a+"px !important} ."+h.jsClass+" .disable-pointer-events{pointer-events:none !important} ."+h.jsClass+" ."+h.navClass+"-"+this.index+".opened.dropdown-active {max-height:9999px !important}";t.styleSheet?t.styleSheet.cssText=c:t.innerHTML=c,c=""}},new v(d,e)};b.responsiveNav=d}(document,window,0);
-/*global describe: false, it: false */
-describe("helpers", function () {
-
-  var el = document.createElement("div"),
-    event,
-    eventName,
-    memo = {};
-
-  if (document.createEvent) {
-    event = document.createEvent("HTMLEvents");
-    event.initEvent("dataavailable", true, true);
-  } else {
-    event = document.createEventObject();
-    event.eventType = "dataavailable";
-  }
-
-  event.eventName = eventName;
-  event.memo = memo || { };
-
-  function insertEl() {
-    document.getElementsByTagName("body")[0].appendChild(el);
-  }
-
-  /**
-   * addEvent
-   */
-  describe("addEvent", function () {
-
-    it("adds a DOM event", function () {
-      var obj;
-      function customEvent() {
-        obj = { a : 1, b : 2 };
-      }
-      addEvent(window, "dataavailable", customEvent, false);
-      if (document.createEvent) {
-        window.dispatchEvent(event);
-      } else {
-        window.fireEvent("on" + event.eventType, event);
-      }
-      expect(obj).toEqual({ a : 1, b : 2 });
-    });
-
-  });
-
-  /**
-   * removeEvent
-   */
-  describe("removeEvent", function () {
-
-    it("removes a DOM event", function () {
-      var obj;
-      function customEvent() {
-        obj = { a : 1, b : 2 };
-      }
-      addEvent(window, "dataavailable", customEvent, false);
-      removeEvent(window, "dataavailable", customEvent, false);
-      if (document.createEvent) {
-        window.dispatchEvent(event);
-      } else {
-        window.fireEvent("on" + event.eventType, event);
-      }
-      expect(obj).toEqual(undefined);
-    });
-
-  });
-
-  /**
-   * getChildren
-   */
-  describe("getChildren", function () {
-
-    it("gets and stores all children in an array", function () {
-      el.innerHTML = "<div></div><div></div><span></span>";
-      insertEl();
-      var children = getChildren(el);
-      expect(children[0].nodeName.toLowerCase()).toEqual("div");
-      expect(children[1].nodeName.toLowerCase()).toEqual("div");
-      expect(children[2].nodeName.toLowerCase()).toEqual("span");
-    });
-
-  });
-
-  /**
-   * setAttributes
-   */
-  describe("setAttributes", function () {
-
-    it("sets multiple attributes to a single element", function () {
-      insertEl();
-      setAttributes(el, { "class": "added-class", "id": "added-id" });
-      expect(el.className).toEqual("added-class");
-      expect(el.id).toEqual("added-id");
-    });
-
-  });
-
-  /**
-   * addClass
-   */
-  describe("addClass", function () {
-
-    it("checks if a class exists and adds it if it doesn't", function () {
-      insertEl();
-      addClass(el, "added-class-2");
-      expect(el.className).toEqual("added-class added-class-2");
-    });
-
-  });
-
-  /**
-   * removeClass
-   */
-  describe("removeClass", function () {
-
-    it("removes removes a class from an element", function () {
-      el.className = "not-removed-class removed-class";
-      insertEl();
-      removeClass(el, "removed-class");
-      expect(el.className).not.toEqual("removed-class");
-      expect(el.className).toEqual("not-removed-class");
-    });
-
-  });
-
-});
-
-/*global describe: false, it: false */
-describe("polyfills", function () {
-
-  /**
-   * computed
-   */
-  describe("computed", function () {
-
-    it("checks if getComputedStyles is supported and polyfills it if not", function () {
-      var el = document.createElement("div");
-      el.style.display = "inline";
-      document.getElementsByTagName("body")[0].appendChild(el);
-      var test = window.getComputedStyle(el);
-      expect(test.display).toEqual("inline");
-    });
-
-  });
-
-});
-
-/*global describe: false, it: false */
-/* exported ResponsiveNav */
-describe("responsive-nav", function () {
-
-  var nav,
-    selector = "navigation",
-    el = document.createElement("div");
-
-  el.className = "nav-collapse";
-  el.id = selector;
-  el.innerHTML = "<ul style='overflow:hidden;width:100%;height:16px;float:left;margin:0;padding:0'>" +
-    "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Home</a></li>" +
-    "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>About</a></li>" +
-    "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Projects</a></li>" +
-    "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Blog</a></li>" +
-    "</ul>";
-
-  function eventFire(el, etype) {
-    if (el.dispatchEvent) {
-      var evObj = document.createEvent("Events");
-      evObj.initEvent(etype, true, false);
-      el.dispatchEvent(evObj);
-    } else if (el.fireEvent) {
-      el.fireEvent("on" + etype);
-    }
-  }
-
-  function insertNav() {
-    document.getElementsByTagName("body")[0].appendChild(el);
-    nav = responsiveNav(selector);
-  }
-
-  /**
-   * Resize
-   */
-  describe("resize", function () {
-
-    it("calculates the height of the navigation", function () {
-      el.innerHTML = "<ul style='overflow:hidden;width:100%;float:left;margin:0;padding:0'>" +
-        "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Home</a></li>" +
-        "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>About</a></li>" +
-        "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Projects</a></li>" +
-        "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Blog</a></li>" +
-        "</ul>";
-      insertNav();
-      var styleEl = document.getElementsByTagName("style")[0],
-        styleContents = styleEl.innerHTML || styleEl.styleSheet.cssText.replace(/\s+/g, "").replace(/\;/g, "");
-      expect(styleContents.replace(/\.opened/g, "")).toBe(".js .nav-collapse-0{max-height:16px !important} .js .disable-pointer-events{pointer-events:none !important} .js .nav-collapse-0.dropdown-active {max-height:9999px !important}");
-      nav.destroy();
-    });
-
-  });
-
-  /**
-   * Init
-   */
-  describe("init", function () {
-
-    it("adds a 'js' class", function () {
-      insertNav();
-      expect(document.documentElement.className).toBe("js");
-      nav.destroy();
-    });
-
-    it("selects the element", function () {
-      spyOn(document, "getElementById").andCallThrough();
-      insertNav();
-      expect(document.getElementById).toHaveBeenCalledWith(selector);
-      expect(nav.wrapper.id).toBe(selector);
-      nav.destroy();
-    });
-
-    it("creates a toggle", function () {
-      insertNav();
-      expect(document.querySelector(".nav-toggle").nodeName.toLowerCase()).toBe("a");
-      expect(el.className).toBe("nav-collapse nav-collapse-3 closed");
-      nav.destroy();
-    });
-
-    it("initializes transitions", function () {
-      insertNav();
-      spyOn(nav, "_transitions").andCallThrough();
-      nav._transitions();
-      expect(nav._transitions).toHaveBeenCalled();
-      nav.destroy();
-    });
-
-    it("initializes calculations", function () {
-      insertNav();
-      spyOn(nav, "resize").andCallThrough();
-      nav.resize();
-      expect(nav.resize).toHaveBeenCalled();
-      nav.destroy();
-    });
-
-    it("adds classes", function () {
-      insertNav();
-      expect(el.className).toBe("nav-collapse nav-collapse-6 closed");
-      nav.destroy();
-    });
-
-    it("should work with multiple menus", function () {
-      el.innerHTML = "<ul style='display:block;width:100%;float:left;margin:0;padding:0'>" +
-        "<li style='display:block;height:10px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Home</a></li>" +
-        "<li style='display:block;height:10px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>About</a></li>" +
-        "</ul>" +
-        "<ul style='display:block;width:100%;float:left;margin:0;padding:0'>" +
-        "<li style='height:10px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Home</a></li>" +
-        "<li style='height:10px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>About</a></li>" +
-        "<li style='height:10px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Foo</a></li>" +
-        "</ul>";
-      insertNav();
-      var styleEl = document.getElementsByTagName("style")[0],
-        styleContents = styleEl.innerHTML || styleEl.styleSheet.cssText.replace(/\s+/g, "").replace(/\;/g, "");
-      expect(styleContents.replace(/\.opened/g, "")).toBe(".js .nav-collapse-7{max-height:50px !important} .js .disable-pointer-events{pointer-events:none !important} .js .nav-collapse-7.dropdown-active {max-height:9999px !important}");
-      nav.destroy();
-    });
-
-    it("should work with multiple instances", function () {
-      var el2 = document.createElement("div");
-      el2.className = "nav-collapse";
-      el2.id = "navigation2";
-      el2.innerHTML = "<ul style='overflow:hidden;width:100%;height:16px;float:left;margin:0;padding:0'>" +
-        "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Home</a></li>" +
-        "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>About</a></li>" +
-        "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Projects</a></li>" +
-        "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Blog</a></li>" +
-        "</ul>";
-      document.getElementsByTagName("body")[0].appendChild(el);
-      document.getElementsByTagName("body")[0].appendChild(el2);
-      nav = responsiveNav(selector);
-      var nav2 = responsiveNav("#navigation2");
-      expect(el.className).toBe("nav-collapse nav-collapse-8 closed");
-      expect(el2.className).toBe("nav-collapse nav-collapse-9 closed");
-      nav.destroy();
-      nav2.destroy();
-    });
-
-  });
-
-  /**
-   * destroy
-   */
-  describe("destroy", function () {
-
-    it("destroys Responsive Nav", function () {
-      insertNav();
-      nav.destroy();
-      expect(el.className).not.toBe("nav-collapse closed");
-      expect(el.className).not.toBe("nav-collapse opened");
-      expect(el.className).not.toBe("nav-collapse");
-      expect(document.querySelector(".nav-toggle")).toBe(null);
-      expect(el.style.position).toBe("");
-      expect(el.style.maxHeight).toBe("");
-      expect(el.getAttribute("aria-hidden")).not.toBe("true");
-      expect(el.getAttribute("aria-hidden")).not.toBe("false");
-    });
-
-  });
-
-  /**
-   * toggle
-   */
-  describe("toggle", function () {
-
-    it("toggles the navigation open and close", function () {
-      insertNav();
-      spyOn(nav, "toggle").andCallThrough();
-      nav.toggle();
-      expect(nav.toggle).toHaveBeenCalled();
-      expect(el.className).toBe("nav-collapse nav-collapse-11 opened");
-      expect(el.getAttribute("aria-hidden")).toBe("false");
-      expect(el.style.position).toBe("relative");
-      var navToggle = document.querySelector(".nav-toggle");
-      expect(navToggle.className).toBe("nav-toggle active");
-      nav.destroy();
-    });
-
-  });
-
-  /**
-   * open
-   */
-  describe("open", function () {
-
-    it("opens the navigation", function () {
-      insertNav();
-      spyOn(nav, "open").andCallThrough();
-      nav.open();
-      expect(nav.open).toHaveBeenCalled();
-      expect(el.className).toBe("nav-collapse nav-collapse-12 opened");
-      expect(el.getAttribute("aria-hidden")).toBe("false");
-      expect(el.style.position).toBe("relative");
-      nav.destroy();
-    });
-
-  });
-
-  /**
-   * close
-   */
-  describe("close", function () {
-
-    it("closes the navigation", function () {
-      insertNav();
-      spyOn(nav, "close").andCallThrough();
-      nav.open();
-      nav.close();
-      expect(nav.close).toHaveBeenCalled();
-      expect(el.className).toBe("nav-collapse nav-collapse-13 closed");
-      expect(el.getAttribute("aria-hidden")).toBe("true");
-      nav.destroy();
-    });
-
-  });
-
-  /**
-   * handleEvent
-   */
-  describe("handleEvent", function () {
-
-    it("toggles the navigation on touchend", function () {
-      insertNav();
-      var toggle = document.querySelector(".nav-toggle");
-      eventFire(toggle, "touchend");
-      expect(el.className).toBe("nav-collapse nav-collapse-14 opened");
-      nav.destroy();
-    });
-
-    it("toggles the navigation on mouseup", function () {
-      insertNav();
-      var toggle = document.querySelector(".nav-toggle");
-      eventFire(toggle, "mouseup");
-      expect(el.className).toBe("nav-collapse nav-collapse-15 opened");
-      nav.destroy();
-    });
-
-  });
-
-  /**
-   * options
-   */
-  describe("options", function () {
-
-    it("turns off animation if needed", function () {
-      document.getElementsByTagName("body")[0].appendChild(el);
-      nav = responsiveNav("#" + selector, { animate: false });
-      expect(el.style.transition).not.toBe("max-height 250ms");
-      nav.destroy();
-    });
-
-    it("controls the transition speed", function () {
-      document.getElementsByTagName("body")[0].appendChild(el);
-      nav = responsiveNav("#" + selector, { transition: 666 });
-      if (el.style.transition) {
-        expect(el.style.transition).toBe("max-height 666ms");
-      } else if (el.style.webkitTransition) {
-        expect(el.style.webkitTransition).toBe("max-height 666ms");
-      }
-      nav.destroy();
-    });
-
-    it("changes the toggle's text", function () {
-      document.getElementsByTagName("body")[0].appendChild(el);
-      nav = responsiveNav("#" + selector, { label: "foobar" });
-      expect(document.querySelector(".nav-toggle").innerHTML).toBe("foobar");
-      nav.destroy();
-    });
-
-    it("'changes the location where toggle is inserted", function () {
-      document.getElementsByTagName("body")[0].appendChild(el);
-      nav = responsiveNav("#" + selector, { insert: "before" });
-      expect(document.querySelector(".nav-toggle").nextSibling).toBe(el);
-      nav.destroy();
-    });
-
-    it("allows users to specify their own toggle", function () {
-      document.getElementsByTagName("body")[0].appendChild(el);
-      var button = document.createElement("button");
-      button.id = "button";
-      document.getElementsByTagName("body")[0].appendChild(button);
-      nav = responsiveNav("#" + selector, { customToggle: "button" });
-      expect(document.getElementById("button").getAttribute("aria-hidden")).toBeDefined();
-      nav.destroy();
-    });
-
-    it("allows users to specify custom open position", function () {
-      document.getElementsByTagName("body")[0].appendChild(el);
-      nav = responsiveNav("#" + selector, { openPos: "static" });
-      nav.toggle();
-      expect(el.style.position).toBe("static");
-      nav.destroy();
-    });
-
-    it("allows users to change the default container class", function () {
-      document.getElementsByTagName("body")[0].appendChild(el);
-      nav = responsiveNav("#" + selector, { navClass: "random-class" });
-      expect(el.className).toBe("random-class random-class-22 closed");
-      nav.destroy();
-    });
-
-    it("allows users to specify custom JS class", function () {
-      document.getElementsByTagName("body")[0].appendChild(el);
-      nav = responsiveNav("#" + selector, { jsClass: "foobar" });
-      expect(document.documentElement.className).toBe("js foobar");
-      nav.destroy();
-    });
-
-    it("allows users to have init callback", function () {
-      document.getElementsByTagName("body")[0].appendChild(el);
-      var foo = "bar";
-      nav = responsiveNav("#" + selector, {
-        init: function () { foo = "biz"; }
-      });
-      expect(foo).toBe("biz");
-      nav.destroy();
-    });
-
-    it("allows users to have open callback", function () {
-      document.getElementsByTagName("body")[0].appendChild(el);
-      var foo = "bar";
-      nav = responsiveNav("#" + selector, {
-        open: function () { foo = "biz"; }
-      });
-      nav.toggle();
-      expect(foo).toBe("biz");
-      nav.destroy();
-    });
-
-    it("allows users to have close callback", function () {
-      document.getElementsByTagName("body")[0].appendChild(el);
-      var foo = "bar";
-      nav = responsiveNav("#" + selector, {
-        close: function () { foo = "biz"; }
-      });
-      nav.toggle();
-      nav.toggle();
-      expect(foo).toBe("biz");
-      nav.destroy();
-    });
-
-  });
-
-});
-
 /* exported addEvent, removeEvent, getChildren, setAttributes, addClass, removeClass, forEach */
 
 /**
@@ -3855,6 +3364,497 @@ if (!computed) {
   window.responsiveNav = responsiveNav;
 
 }(document, window, 0));
+
+/*global describe: false, it: false */
+describe("helpers", function () {
+
+  var el = document.createElement("div"),
+    event,
+    eventName,
+    memo = {};
+
+  if (document.createEvent) {
+    event = document.createEvent("HTMLEvents");
+    event.initEvent("dataavailable", true, true);
+  } else {
+    event = document.createEventObject();
+    event.eventType = "dataavailable";
+  }
+
+  event.eventName = eventName;
+  event.memo = memo || { };
+
+  function insertEl() {
+    document.getElementsByTagName("body")[0].appendChild(el);
+  }
+
+  /**
+   * addEvent
+   */
+  describe("addEvent", function () {
+
+    it("adds a DOM event", function () {
+      var obj;
+      function customEvent() {
+        obj = { a : 1, b : 2 };
+      }
+      addEvent(window, "dataavailable", customEvent, false);
+      if (document.createEvent) {
+        window.dispatchEvent(event);
+      } else {
+        window.fireEvent("on" + event.eventType, event);
+      }
+      expect(obj).toEqual({ a : 1, b : 2 });
+    });
+
+  });
+
+  /**
+   * removeEvent
+   */
+  describe("removeEvent", function () {
+
+    it("removes a DOM event", function () {
+      var obj;
+      function customEvent() {
+        obj = { a : 1, b : 2 };
+      }
+      addEvent(window, "dataavailable", customEvent, false);
+      removeEvent(window, "dataavailable", customEvent, false);
+      if (document.createEvent) {
+        window.dispatchEvent(event);
+      } else {
+        window.fireEvent("on" + event.eventType, event);
+      }
+      expect(obj).toEqual(undefined);
+    });
+
+  });
+
+  /**
+   * getChildren
+   */
+  describe("getChildren", function () {
+
+    it("gets and stores all children in an array", function () {
+      el.innerHTML = "<div></div><div></div><span></span>";
+      insertEl();
+      var children = getChildren(el);
+      expect(children[0].nodeName.toLowerCase()).toEqual("div");
+      expect(children[1].nodeName.toLowerCase()).toEqual("div");
+      expect(children[2].nodeName.toLowerCase()).toEqual("span");
+    });
+
+  });
+
+  /**
+   * setAttributes
+   */
+  describe("setAttributes", function () {
+
+    it("sets multiple attributes to a single element", function () {
+      insertEl();
+      setAttributes(el, { "class": "added-class", "id": "added-id" });
+      expect(el.className).toEqual("added-class");
+      expect(el.id).toEqual("added-id");
+    });
+
+  });
+
+  /**
+   * addClass
+   */
+  describe("addClass", function () {
+
+    it("checks if a class exists and adds it if it doesn't", function () {
+      insertEl();
+      addClass(el, "added-class-2");
+      expect(el.className).toEqual("added-class added-class-2");
+    });
+
+  });
+
+  /**
+   * removeClass
+   */
+  describe("removeClass", function () {
+
+    it("removes removes a class from an element", function () {
+      el.className = "not-removed-class removed-class";
+      insertEl();
+      removeClass(el, "removed-class");
+      expect(el.className).not.toEqual("removed-class");
+      expect(el.className).toEqual("not-removed-class");
+    });
+
+  });
+
+});
+
+/*global describe: false, it: false */
+describe("polyfills", function () {
+
+  /**
+   * computed
+   */
+  describe("computed", function () {
+
+    it("checks if getComputedStyles is supported and polyfills it if not", function () {
+      var el = document.createElement("div");
+      el.style.display = "inline";
+      document.getElementsByTagName("body")[0].appendChild(el);
+      var test = window.getComputedStyle(el);
+      expect(test.display).toEqual("inline");
+    });
+
+  });
+
+});
+
+/*global describe: false, it: false */
+/* exported ResponsiveNav */
+describe("responsive-nav", function () {
+
+  var nav,
+    selector = "navigation",
+    el = document.createElement("div");
+
+  el.className = "nav-collapse";
+  el.id = selector;
+  el.innerHTML = "<ul style='overflow:hidden;width:100%;height:16px;float:left;margin:0;padding:0'>" +
+    "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Home</a></li>" +
+    "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>About</a></li>" +
+    "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Projects</a></li>" +
+    "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Blog</a></li>" +
+    "</ul>";
+
+  function eventFire(el, etype) {
+    if (el.dispatchEvent) {
+      var evObj = document.createEvent("Events");
+      evObj.initEvent(etype, true, false);
+      el.dispatchEvent(evObj);
+    } else if (el.fireEvent) {
+      el.fireEvent("on" + etype);
+    }
+  }
+
+  function insertNav() {
+    document.getElementsByTagName("body")[0].appendChild(el);
+    nav = responsiveNav(selector);
+  }
+
+  /**
+   * Resize
+   */
+  describe("resize", function () {
+
+    it("calculates the height of the navigation", function () {
+      el.innerHTML = "<ul style='overflow:hidden;width:100%;float:left;margin:0;padding:0'>" +
+        "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Home</a></li>" +
+        "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>About</a></li>" +
+        "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Projects</a></li>" +
+        "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Blog</a></li>" +
+        "</ul>";
+      insertNav();
+      var styleEl = document.getElementsByTagName("style")[0],
+        styleContents = styleEl.innerHTML || styleEl.styleSheet.cssText.replace(/\s+/g, "").replace(/\;/g, "");
+      expect(styleContents.replace(/\.opened/g, "")).toBe(".js .nav-collapse-0{max-height:16px !important} .js .disable-pointer-events{pointer-events:none !important} .js .nav-collapse-0.dropdown-active {max-height:9999px !important}");
+      nav.destroy();
+    });
+
+  });
+
+  /**
+   * Init
+   */
+  describe("init", function () {
+
+    it("adds a 'js' class", function () {
+      insertNav();
+      expect(document.documentElement.className).toBe("js");
+      nav.destroy();
+    });
+
+    it("selects the element", function () {
+      spyOn(document, "getElementById").andCallThrough();
+      insertNav();
+      expect(document.getElementById).toHaveBeenCalledWith(selector);
+      expect(nav.wrapper.id).toBe(selector);
+      nav.destroy();
+    });
+
+    it("creates a toggle", function () {
+      insertNav();
+      expect(document.querySelector(".nav-toggle").nodeName.toLowerCase()).toBe("a");
+      expect(el.className).toBe("nav-collapse nav-collapse-3 closed");
+      nav.destroy();
+    });
+
+    it("initializes transitions", function () {
+      insertNav();
+      spyOn(nav, "_transitions").andCallThrough();
+      nav._transitions();
+      expect(nav._transitions).toHaveBeenCalled();
+      nav.destroy();
+    });
+
+    it("initializes calculations", function () {
+      insertNav();
+      spyOn(nav, "resize").andCallThrough();
+      nav.resize();
+      expect(nav.resize).toHaveBeenCalled();
+      nav.destroy();
+    });
+
+    it("adds classes", function () {
+      insertNav();
+      expect(el.className).toBe("nav-collapse nav-collapse-6 closed");
+      nav.destroy();
+    });
+
+    it("should work with multiple menus", function () {
+      el.innerHTML = "<ul style='display:block;width:100%;float:left;margin:0;padding:0'>" +
+        "<li style='display:block;height:10px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Home</a></li>" +
+        "<li style='display:block;height:10px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>About</a></li>" +
+        "</ul>" +
+        "<ul style='display:block;width:100%;float:left;margin:0;padding:0'>" +
+        "<li style='height:10px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Home</a></li>" +
+        "<li style='height:10px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>About</a></li>" +
+        "<li style='height:10px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Foo</a></li>" +
+        "</ul>";
+      insertNav();
+      var styleEl = document.getElementsByTagName("style")[0],
+        styleContents = styleEl.innerHTML || styleEl.styleSheet.cssText.replace(/\s+/g, "").replace(/\;/g, "");
+      expect(styleContents.replace(/\.opened/g, "")).toBe(".js .nav-collapse-7{max-height:50px !important} .js .disable-pointer-events{pointer-events:none !important} .js .nav-collapse-7.dropdown-active {max-height:9999px !important}");
+      nav.destroy();
+    });
+
+    it("should work with multiple instances", function () {
+      var el2 = document.createElement("div");
+      el2.className = "nav-collapse";
+      el2.id = "navigation2";
+      el2.innerHTML = "<ul style='overflow:hidden;width:100%;height:16px;float:left;margin:0;padding:0'>" +
+        "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Home</a></li>" +
+        "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>About</a></li>" +
+        "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Projects</a></li>" +
+        "<li style='height:4px;overflow:hidden;width:100%;float:left;margin:0;padding:0'><a href='#'>Blog</a></li>" +
+        "</ul>";
+      document.getElementsByTagName("body")[0].appendChild(el);
+      document.getElementsByTagName("body")[0].appendChild(el2);
+      nav = responsiveNav(selector);
+      var nav2 = responsiveNav("#navigation2");
+      expect(el.className).toBe("nav-collapse nav-collapse-8 closed");
+      expect(el2.className).toBe("nav-collapse nav-collapse-9 closed");
+      nav.destroy();
+      nav2.destroy();
+    });
+
+  });
+
+  /**
+   * destroy
+   */
+  describe("destroy", function () {
+
+    it("destroys Responsive Nav", function () {
+      insertNav();
+      nav.destroy();
+      expect(el.className).not.toBe("nav-collapse closed");
+      expect(el.className).not.toBe("nav-collapse opened");
+      expect(el.className).not.toBe("nav-collapse");
+      expect(document.querySelector(".nav-toggle")).toBe(null);
+      expect(el.style.position).toBe("");
+      expect(el.style.maxHeight).toBe("");
+      expect(el.getAttribute("aria-hidden")).not.toBe("true");
+      expect(el.getAttribute("aria-hidden")).not.toBe("false");
+    });
+
+  });
+
+  /**
+   * toggle
+   */
+  describe("toggle", function () {
+
+    it("toggles the navigation open and close", function () {
+      insertNav();
+      spyOn(nav, "toggle").andCallThrough();
+      nav.toggle();
+      expect(nav.toggle).toHaveBeenCalled();
+      expect(el.className).toBe("nav-collapse nav-collapse-11 opened");
+      expect(el.getAttribute("aria-hidden")).toBe("false");
+      expect(el.style.position).toBe("relative");
+      var navToggle = document.querySelector(".nav-toggle");
+      expect(navToggle.className).toBe("nav-toggle active");
+      nav.destroy();
+    });
+
+  });
+
+  /**
+   * open
+   */
+  describe("open", function () {
+
+    it("opens the navigation", function () {
+      insertNav();
+      spyOn(nav, "open").andCallThrough();
+      nav.open();
+      expect(nav.open).toHaveBeenCalled();
+      expect(el.className).toBe("nav-collapse nav-collapse-12 opened");
+      expect(el.getAttribute("aria-hidden")).toBe("false");
+      expect(el.style.position).toBe("relative");
+      nav.destroy();
+    });
+
+  });
+
+  /**
+   * close
+   */
+  describe("close", function () {
+
+    it("closes the navigation", function () {
+      insertNav();
+      spyOn(nav, "close").andCallThrough();
+      nav.open();
+      nav.close();
+      expect(nav.close).toHaveBeenCalled();
+      expect(el.className).toBe("nav-collapse nav-collapse-13 closed");
+      expect(el.getAttribute("aria-hidden")).toBe("true");
+      nav.destroy();
+    });
+
+  });
+
+  /**
+   * handleEvent
+   */
+  describe("handleEvent", function () {
+
+    it("toggles the navigation on touchend", function () {
+      insertNav();
+      var toggle = document.querySelector(".nav-toggle");
+      eventFire(toggle, "touchend");
+      expect(el.className).toBe("nav-collapse nav-collapse-14 opened");
+      nav.destroy();
+    });
+
+    it("toggles the navigation on mouseup", function () {
+      insertNav();
+      var toggle = document.querySelector(".nav-toggle");
+      eventFire(toggle, "mouseup");
+      expect(el.className).toBe("nav-collapse nav-collapse-15 opened");
+      nav.destroy();
+    });
+
+  });
+
+  /**
+   * options
+   */
+  describe("options", function () {
+
+    it("turns off animation if needed", function () {
+      document.getElementsByTagName("body")[0].appendChild(el);
+      nav = responsiveNav("#" + selector, { animate: false });
+      expect(el.style.transition).not.toBe("max-height 250ms");
+      nav.destroy();
+    });
+
+    it("controls the transition speed", function () {
+      document.getElementsByTagName("body")[0].appendChild(el);
+      nav = responsiveNav("#" + selector, { transition: 666 });
+      if (el.style.transition) {
+        expect(el.style.transition).toBe("max-height 666ms");
+      } else if (el.style.webkitTransition) {
+        expect(el.style.webkitTransition).toBe("max-height 666ms");
+      }
+      nav.destroy();
+    });
+
+    it("changes the toggle's text", function () {
+      document.getElementsByTagName("body")[0].appendChild(el);
+      nav = responsiveNav("#" + selector, { label: "foobar" });
+      expect(document.querySelector(".nav-toggle").innerHTML).toBe("foobar");
+      nav.destroy();
+    });
+
+    it("'changes the location where toggle is inserted", function () {
+      document.getElementsByTagName("body")[0].appendChild(el);
+      nav = responsiveNav("#" + selector, { insert: "before" });
+      expect(document.querySelector(".nav-toggle").nextSibling).toBe(el);
+      nav.destroy();
+    });
+
+    it("allows users to specify their own toggle", function () {
+      document.getElementsByTagName("body")[0].appendChild(el);
+      var button = document.createElement("button");
+      button.id = "button";
+      document.getElementsByTagName("body")[0].appendChild(button);
+      nav = responsiveNav("#" + selector, { customToggle: "button" });
+      expect(document.getElementById("button").getAttribute("aria-hidden")).toBeDefined();
+      nav.destroy();
+    });
+
+    it("allows users to specify custom open position", function () {
+      document.getElementsByTagName("body")[0].appendChild(el);
+      nav = responsiveNav("#" + selector, { openPos: "static" });
+      nav.toggle();
+      expect(el.style.position).toBe("static");
+      nav.destroy();
+    });
+
+    it("allows users to change the default container class", function () {
+      document.getElementsByTagName("body")[0].appendChild(el);
+      nav = responsiveNav("#" + selector, { navClass: "random-class" });
+      expect(el.className).toBe("random-class random-class-22 closed");
+      nav.destroy();
+    });
+
+    it("allows users to specify custom JS class", function () {
+      document.getElementsByTagName("body")[0].appendChild(el);
+      nav = responsiveNav("#" + selector, { jsClass: "foobar" });
+      expect(document.documentElement.className).toBe("js foobar");
+      nav.destroy();
+    });
+
+    it("allows users to have init callback", function () {
+      document.getElementsByTagName("body")[0].appendChild(el);
+      var foo = "bar";
+      nav = responsiveNav("#" + selector, {
+        init: function () { foo = "biz"; }
+      });
+      expect(foo).toBe("biz");
+      nav.destroy();
+    });
+
+    it("allows users to have open callback", function () {
+      document.getElementsByTagName("body")[0].appendChild(el);
+      var foo = "bar";
+      nav = responsiveNav("#" + selector, {
+        open: function () { foo = "biz"; }
+      });
+      nav.toggle();
+      expect(foo).toBe("biz");
+      nav.destroy();
+    });
+
+    it("allows users to have close callback", function () {
+      document.getElementsByTagName("body")[0].appendChild(el);
+      var foo = "bar";
+      nav = responsiveNav("#" + selector, {
+        close: function () { foo = "biz"; }
+      });
+      nav.toggle();
+      nav.toggle();
+      expect(foo).toBe("biz");
+      nav.destroy();
+    });
+
+  });
+
+});
 
 /**
  * Swiper 3.0.3
