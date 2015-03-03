@@ -1,143 +1,132 @@
 .nav-collapse.disable-pointer-events {
-    pointer-events: none !important;
+  pointer-events: none !important;
 }
 
 .nav-collapse {
-    z-index: 1;
-    font-family: sans-serif
+  font-family: sans-serif;
+  z-index: 1;
 }
 
 .nav-collapse, 
 .nav-collapse * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box
+  box-sizing: border-box;
 }
 
 .nav-collapse, 
 .nav-collapse ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 100%;
-    float: left
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 @media screen and (min-width:46.25em) {
-    .nav-collapse, 
-    .nav-collapse ul {
-      text-align: right;
-    }
+  .nav-collapse, 
+  .nav-collapse ul {
+    text-align: right;
+  }
 }
 
 .nav-collapse li {
-    float: left;
-    width: 100%;
-    display: block
+  display: block;
+  float: left;
+  width: 100%;
 }
 
 @media screen and (min-width:46.25em) {
 
-    .nav-collapse li {
-        float: none;
-        display: inline-block;
-        *display: block;
-        *float: left;
-        width: auto;
-        margin: 0 0 0 18px;
-    }
+  .nav-collapse li {
+    *display: block;
+    *float: left;
+    display: inline-block;
+    float: none;
+    margin: 0 0 0 18px;
+    width: auto;
+  }
 }
 
 .nav-collapse a {
-    font-weight: bold;
+  background: $brand-primary;
+  color: $white;
+  float: left;
+  font-size: 15px;
+  font-weight: bold;
+  padding: .5em 1em;
+  text-decoration: none;
+  width: 100%;
+}
+
+@media screen and (min-width:46.25em) {
+  .nav-collapse a {
+    background: transparent;
+    border: 0;
+    color: $black;
     font-size: 15px;
-    color: white;
-    text-decoration: none;
-    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 15px;
+    transition: background .5s ease;
+  }
+
+  .nav-collapse a:hover, 
+  .nav-collapse a:focus {
     background: $brand-primary;
-    padding: .5em 1em;
-    float: left
+    color: $white;
+  }
 }
 
 @media screen and (min-width:46.25em) {
-    .nav-collapse a {
-        _float: none;
-        -webkit-font-smoothing: antialiased;
-        margin: 0;
-        padding: 15px;
-        font-size: 15px;
-        background: transparent;
-        color: $black;
-        border: 0;
-        -webkit-transition: background .5s ease;
-        -moz-transition: background .5s ease;
-        -o-transition: background .5s ease;
-        transition: background .5s ease
-    }
+  .nav-collapse .active a {
+    background: $brand-primary;
+    color: $white;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
 
-    .nav-collapse a:hover, 
-    .nav-collapse a:focus {
-      background: $brand-primary;
-      color: $white;
-    }
-}
+  .nav-collapse .active a:hover {
+    text-decoration: none;
+  }
 
-@media screen and (min-width:46.25em) {
-    .nav-collapse .active a {
-        -webkit-font-smoothing: subpixel-antialiased;
-        color: white;
-        background: $brand-primary
-    }
-
-    .nav-collapse .active a:hover {
-        text-decoration: none
-    }
-
-    .nav-collapse .active a:focus {
-        background: $brand-primary;
-    }
+  .nav-collapse .active a:focus {
+    background: $brand-primary;
+  }
 }
 
 .js .nav-collapse {
-    clip: rect(0 0 0 0);
-    max-height: 0;
-    position: absolute;
-    display: block;
-    overflow: hidden
+  clip: rect(0 0 0 0);
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  position: absolute;
 }
 
 @media screen and (min-width:46.25em) {
-    .js .nav-collapse {
-        position: relative !important;
-        max-height: none
-    }
+  .js .nav-collapse {
+    max-height: none;
+    position: relative !important;
+  }
 }
 
 .nav-collapse.opened {
-    max-height: 9999px
+  max-height: 9999px;
 }
 
 .nav-toggle {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-    width: 50px;
-    height: 50px;
-    float: right;
-    text-indent: -9999px;
-    overflow: hidden;
-    display: block;
-    background: url("/img/hamburger.png") no-repeat 50% 50%;
-    background-size: 50%;
-
+  background: url('/img/hamburger.png') no-repeat 50% 50%;
+  background-size: 50%;
+  display: block;
+  float: right;
+  height: 50px;
+  overflow: hidden;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-indent: -9999px;
+  -webkit-touch-callout: none;  
+  user-select: none;
+  width: 50px;
 }
 
 @media screen and (min-width:46.25em) {
-    .nav-toggle {
-        display: none;
-    }
+  .nav-toggle {
+    display: none;
+  }
 }
