@@ -46,7 +46,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('scripts', function() {
-  return gulp.src('bower_components/**/*.js')
+  return gulp.src('bower_components/**/*.js', '!./node_modules/**')
     .pipe(gulpIgnore.exclude(condition))
     .pipe(concat('main.js'))
     .pipe(gulp.dest('dist/js'))
