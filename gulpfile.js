@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
 var filter      = require('gulp-filter');
+var gulpIgnore = require('gulp-ignore');
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 
@@ -9,6 +10,10 @@ var reload      = browserSync.reload;
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
+
+var concat = require('gulp-concat');
+var minify = require('gulp-minify');
+
 
 // Images
 var imagemin = require('gulp-imagemin');
@@ -35,6 +40,13 @@ gulp.task('sass', function () {
     }))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('dist/css'))
+    .pipe(reload({stream:true}));
+});
+
+gulp.task('scripts', function() {
+  return gulp.src('bower_components/**/*.js')
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('dist/js'))
     .pipe(reload({stream:true}));
 });
 
