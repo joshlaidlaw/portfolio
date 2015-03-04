@@ -1,21 +1,19 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
-var gulpFilter      = require('gulp-filter');
-var gulpIgnore = require('gulp-ignore');
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 
-var filter = gulpFilter(['*', '!src/vendor', '!**/Gruntfile.js', '!**/gulpfile.js']);
-var condition = './Gruntfile.js';
+var mainBowerFiles = require('main-bower-files');
+var gulpFilter = require('gulp-filter');
 
 // CSS/SCSS
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 
+// Javascript
 var concat = require('gulp-concat');
 var minify = require('gulp-minify');
-
 
 // Images
 var imagemin = require('gulp-imagemin');
@@ -46,8 +44,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('scripts', function() {
-  return gulp.src('bower_components/**/*.js', '!./node_modules/**')
-    .pipe(gulpIgnore.exclude(condition))
+  gulp.src(['bower_components/**/*.js', '!bower_components/**/Gruntfile.js', '!bower_components/**/*.min.js', '!bower_components/**/gulpfile.js' ])
     .pipe(concat('main.js'))
     .pipe(gulp.dest('dist/js'))
     .pipe(reload({stream:true}));
