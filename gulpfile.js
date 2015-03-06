@@ -4,7 +4,7 @@ var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 
 var mainBowerFiles = require('main-bower-files');
-var gulpFilter = require('gulp-filter');
+var filter = require('gulp-filter');
 
 // CSS/SCSS
 var sass = require('gulp-sass');
@@ -44,8 +44,9 @@ gulp.task('sass', function () {
 });
 
 gulp.task('scripts', function() {
-  gulp.src(['bower_components/**/*.js', '!bower_components/**/Gruntfile.js', '!bower_components/**/*.min.js', '!bower_components/**/gulpfile.js' ])
-    .pipe(concat('main.js'))
+  gulp.src(mainBowerFiles())
+    .pipe(filter('*.js'))
+    .pipe(concat('vendor.js'))
     .pipe(gulp.dest('dist/js'))
     .pipe(reload({stream:true}));
 });

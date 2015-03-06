@@ -2,6 +2,7 @@
 @import "../bower_components/susy/sass/_susy";
 @import "../bower_components/normalize-scss/_normalize";
 @import "../bower_components/breakpoint-sass/stylesheets/_breakpoint";
+@import "../bower_components/swiper/dist/css/swiper.scss";
 @import "/css/responsive-nav.css";
 
 @import "partials/_base";
@@ -29,3 +30,8 @@ hr {
 	height: 4px;
 	margin : 1em 0;
 }
+
+.swiper-container {
+    width: 600px;
+    height: 300px;
+} 
