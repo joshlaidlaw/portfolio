@@ -1,3 +1,8 @@
+.fixedsticky {
+  background-color: $white;
+  top: 0;
+}
+
 .nav-collapse.disable-pointer-events {
   pointer-events: none !important;
 }

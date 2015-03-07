@@ -8,7 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/responsive-nav/responsive-nav.css" />
+    <link rel="stylesheet" href="/bower_components/qunit/qunit/qunit.css" />
+    <link rel="stylesheet" href="/bower_components/filament-sticky/fixedsticky.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="css/main.css">
+    <!-- endbuild -->
 
     <!--[if lt IE 9]>
       <script src="js/vendor/html5-3.6-respond-1.4.2.min.js"></script>
@@ -16,17 +27,6 @@
   </head>
   <body>
     <div class="container">
-
-      <header class="col12">
-        <nav class="nav-collapse">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
 
       <section class="slider col12">
         <div class="swiper-container">
@@ -40,43 +40,59 @@
         </div>
       </section>
 
-      <section class="about col12">
+      <header id="stickyNav" class="col12 fixedsticky">
+        <nav class="nav-collapse">
+          <ul>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Services">Services</a></li>
+            <li><a href="#Listings">Listings</a></li>
+            <li><a href="#Contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="About" class="about col12">
         <h1 class="rule"><span>About</span></h1>
         <div class="col12">
-          
+          <h2>We are Realtors who specialize in the City of Vancouver.</h2>
+          <p>We understand the personal investment of choosing to live here—it’s the benefits of living amongst natural beauty, less time spent commuting, and more quality time spent with friends and family doing the things that matter most. We know this city inside out and have the experience, market knowledge and personal commitment to help make it possible for you.</p>
+          <p>As a team of two highly experienced partners, we offer the benefit of our combined experience and personally invest the time to guide you from start to finish. Though our achievements in real estate are high, it’s not the sales numbers that drive us. It’s working with people and communities, and helping others to build lives in this incredible city.</p>
+          <p class="center"><a href="#Listings">View our listings</a></p>          
         </div>
-        <hr>
         <div class="col12">
+          <hr>
+          <div class="col2">
+            <blockquote>Personal quote by Sebastian fugias ducieni hitatus explique id endel id exceatus ex parum faccumqui sin pre.</blockquote>
+            <h4 class="name">Sebastian Albrecht</h4>
+            <img src="">
+          </div>
+          <div class="col2 last">
+            <blockquote>Personal quote by Duncan vducieni hitatus explique id endel id hitatus exceatus parum faccumqui sin pre sin pre.</blockquote>
+            <h4 class="name">Duncan Albrecht</h4>
+            <img src="">
+          </div>
+        </div>
+        <div class="col12">
+          <hr>
           <div class="col3">
-            <h2>3</h2>
+            <p class="splash">We each have long and successful track records as Vancouver Realtors. Here is just some of the recognition we have received.</p>
           </div>
           <div class="col3">
-            <h2>3</h2>
-          </div>
-          <div class="col3">
-            <h2>3</h2>
+            <h4 class="name">Sebastian Albrecht</h4>
+            <ul class="awards--list">
+              <li>2010–13 Top 3% <span class="small-caps">rebgv</span> (Medallion)</li>
+              <li>2010–13 Top 5% Royal LePage Canada</li>
+              <li>2010–13 Top 5% Royal LePage Canada</li>
+            </ul>
           </div>
           <div class="col3 last">
-            <h2>3</h2>
+            <h4 class="name">Duncan Albrecht</h4>
+            <ul class="awards--list">
+              <li>Top 3% in Canada Royal LePage 2014 (11th consecutive year)</li>
+              <li>Top 10% of all Greater Vancouver Realtors 2014 (15th consecutive year)</li>
+              <li>Top 10% Donor Royal LePage Shelter Foundation 2014</li>
+            </ul>
           </div>
-        </div>
-      </section>
-
-      <section class="awards col12">
-        <h1 class="rule"><span>Awards</span></h1>
-        <div class="col12">
-          <div class="col4">
-            <h2>4</h2>
-          </div>
-          <div class="col4">
-            <h2>4</h2>
-          </div>
-          <div class="col4 last">
-            <h2>4</h2>
-          </div>
-        </div>
-        <div class="testimonials col12">
-          <h1><span>Testimonials</span></h1>
         </div>
       </section>
 
@@ -132,12 +148,21 @@
       </footer>
     </div>
 
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/html5shiv/dist/html5shiv.js"></script>
+    <script src="/bower_components/responsive-nav/responsive-nav.js"></script>
+    <script src="/bower_components/swiper/dist/js/swiper.js"></script>
+    <script src="/bower_components/filament-fixed/fixedfixed.js"></script>
+    <script src="/bower_components/qunit/qunit/qunit.js"></script>
+    <script src="/bower_components/filament-sticky/fixedsticky.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
 
+    <!-- build:js scripts/main.js -->
     <script src="js/main.js"></script>
-
-    <script>
-        var nav = responsiveNav(".nav-collapse");
-    </script>
+    <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

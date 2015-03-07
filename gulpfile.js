@@ -1,71 +1,127 @@
+/*global -$ */
 var gulp = require('gulp');
-var watch = require('gulp-watch');
+var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
-var reload      = browserSync.reload;
-
-var mainBowerFiles = require('main-bower-files');
-var filter = require('gulp-filter');
-
-// CSS/SCSS
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var autoprefixer = require('gulp-autoprefixer');
-
-// Javascript
-var concat = require('gulp-concat');
-var minify = require('gulp-minify');
-
-// Images
-var imagemin = require('gulp-imagemin');
+var reload = browserSync.reload;
 var pngquant = require('imagemin-pngquant');
 
-gulp.task('browser-sync', function() {
-    browserSync({
-        server: {
-            baseDir: "dist"
-        }
-    });
-
-    gulp.watch("scss/**/*.scss", ['sass']);
-    gulp.watch("dist/*.html").on('change', reload);
-});
-
-gulp.task('sass', function () {
-  gulp.src('scss/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(autoprefixer({
+gulp.task('styles', function () {
+  return gulp.src('scss/main.scss')
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      onError: console.error.bind(console, 'Sass error:')
+    }))
+    .pipe($.autoprefixer({
         browsers: ['last 2 versions'],
         cascade: false
     }))
-    .pipe(sourcemaps.write())
+    .pipe($.sourcemaps.write())
     .pipe(gulp.dest('dist/css'))
     .pipe(reload({stream:true}));
 });
 
-gulp.task('scripts', function() {
-  gulp.src(mainBowerFiles())
-    .pipe(filter('*.js'))
-    .pipe(concat('vendor.js'))
-    .pipe(gulp.dest('dist/js'))
-    .pipe(reload({stream:true}));
+gulp.task('jshint', function () {
+  return gulp.src('js/*.js')
+    .pipe(reload({stream: true, once: true}))
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish'))
+    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+});
+
+gulp.task('html', ['styles'], function () {
+  var assets = $.useref.assets({searchPath: ['dist', '.']});
+
+  return gulp.src('dist/*.html')
+    .pipe(assets)
+    .pipe($.if('*.js', $.uglify()))
+    .pipe($.if('*.css', $.csso()))
+    .pipe(assets.restore())
+    .pipe($.useref())
+    .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('images', function () {
   gulp.src('images/*')
-    .pipe(imagemin({
+    .pipe($.cache($.imagemin({
         progressive: true,
-        svgoPlugins: [{removeViewBox: false}],
-        use: [pngquant()]
-    }))
+        interlaced: true,
+        use: [pngquant()],
+        svgoPlugins: [{
+            removeViewBox: false,
+            cleanupIDs: false
+        }]
+    })))
     .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('fonts', function () {
+  return gulp.src(require('main-bower-files')({
+    filter: '**/*.{eot,svg,ttf,woff,woff2}'
+  }).concat('fonts/**/*'))
+    .pipe(gulp.dest('dist/fonts'));
+});
+
+gulp.task('extras', function () {
+  return gulp.src([
+    'dist/*.*',
+    '!dist/*.html'
+  ], {
+    dot: true
+  }).pipe(gulp.dest('dist'));
 });
 
 gulp.task('dist', ['sass', 'images'], function() {
   // Do stuff
 });
 
-gulp.task('default', ['browser-sync'], function() {
+gulp.task('clean', require('del').bind(null, ['dist']));
 
-  // place code for your default task here
+gulp.task('serve', ['styles', 'fonts'], function () {
+  browserSync({
+    notify: false,
+    port: 9000,
+    server: {
+      baseDir: ['dist'],
+      routes: {
+        '/bower_components': 'bower_components'
+      }
+    }
+  });
+
+  // watch for changes
+  gulp.watch([
+    'dist/*.html',
+    'dist/scripts/**/*.js',
+    'dist/images/**/*',
+    'dist/fonts/**/*'
+  ]).on('change', reload);
+
+  gulp.watch('scss/**/*.scss', ['styles']);
+  gulp.watch('dist/fonts/**/*', ['fonts']);
+  gulp.watch('bower.json', ['wiredep', 'fonts']);
+});
+
+gulp.task('wiredep', function () {
+  var wiredep = require('wiredep').stream;
+
+  gulp.src('dist/styles/*.scss')
+    .pipe(wiredep({
+      ignorePath: /^(\.\.\/)+/
+    }))
+    .pipe(gulp.dest('dist/styles'));
+
+  gulp.src('dist/*.html')
+    .pipe(wiredep({
+      ignorePath: /^(\.\.\/)*\.\./
+    }))
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('build', ['jshint', 'html', 'images', 'fonts', 'extras'], function () {
+  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
+});
+
+gulp.task('default', function () {
+  gulp.start('build');
 });
