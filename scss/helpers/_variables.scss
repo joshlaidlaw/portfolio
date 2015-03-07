@@ -4,7 +4,14 @@ $xsmall: 320px;
 $small: 768px;
 $medium: 992px;
 $large:	1200px;
-$xlarge: 1366px; 
+$xlarge: 1366px;
+
+$zindex-navbar:            1000 !default;
+$zindex-dropdown:          1000 !default;
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+$zindex-navbar-fixed:      1030 !default;
+$zindex-modal:             1040 !default; 
 
 $grid-columns: 12;
 
