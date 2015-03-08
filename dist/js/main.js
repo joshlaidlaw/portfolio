@@ -24,5 +24,4 @@ var mySwiper = new Swiper ('.swiper-container', {
 
 var nav = responsiveNav(".nav-collapse");
 
-$( '#stickyNav' ).fixedsticky();
-
+$("#stickyNav").stick_in_parent();
