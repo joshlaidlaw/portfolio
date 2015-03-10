@@ -3,13 +3,16 @@ h1 {
     background: url('../img/wordmark_large.svg') no-repeat;
     background-position: 0 0;
     background-size: 100% auto;
+    font-family: $san-serif;
     font-size: 27px;
-    font-weight: bold;
+    font-weight: 700;
     line-height: 27px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
     text-align: left;
     text-indent: 100%; 
     white-space: nowrap;
-    overflow: hidden;
     text-transform: lowercase;
   }
 
@@ -21,9 +24,10 @@ h1 {
 
 h2 {
   display: block;
-  font-size: 24px;
+  font-family: $san-serif;
+  font-size: 32px;
   font-weight: bold;
-  line-height: 24px;
+  line-height: 1em;
   margin: 0 auto;
   text-align: center;
   text-transform: uppercase;
@@ -31,7 +35,7 @@ h2 {
 
 .rule {
   line-height: .25;
-  margin: 0 0 84px;
+  margin: 0 0 72px;
   text-align: center;
 
   span {
@@ -45,7 +49,7 @@ h2 {
     &:after {
       border-bottom: 1px solid $black;
       content: '';
-      height: 30px;
+      height: 34px;
       position: absolute;
       top: 0;
       width: 800px;
@@ -61,23 +65,52 @@ h2 {
   }
 }
 
+h3 {
+  display: block;
+  font-family: $serif;
+  font-size: 32px;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1em;
+  margin: 0 auto 30px;
+}
+
+#About {
+  p {
+    width: 85%;
+    margin: 0 auto 30px;
+  }
+}
+
 p {
   font-family: serif;
   font-size: 30px;
-  font-style: italic;
+  font-style: normal;
   font-weight: normal;
   line-height: 1.25em;
   margin: 0 0 1em;
 }
 
+a {
+  color: $black;
+  text-decoration: underline;
+}
+
 blockquote {
-  font-family: serif;
-  font-size: 39px;
+  font-family: $serif;
+  font-size: 36px;
   font-style: italic;
   font-weight: normal;
   line-height: 1.25em;
-  margin: 0;
+  margin: 0 0 18px;
+}
 
+.name{
+  font-family: $serif;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+  text-transform: uppercase;
 }
 
 .center {
@@ -85,5 +118,6 @@ blockquote {
 }
 
 .small-caps {
+  font-size: 18px;
   text-transform: uppercase;
 }

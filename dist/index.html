@@ -17,6 +17,7 @@
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="css/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic|Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
 
     <!--[if lt IE 9]>
@@ -103,6 +104,17 @@
             </ul>
           </div>
         </div>
+        <div class="slider col12">
+          <div class="testimonial-container">
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+            </div>
+            <div class="testimonial-pagination"></div>    
+          </div>
+        </div>
       </section>
 
       <section id="Services" class="service col12">
@@ -156,7 +168,7 @@
         </div>
       </section>
 
-      <section class="contact col12">
+      <section id="Contact" class="contact col12">
         <div class="col7">
           <img src="/img/placeholder.gif" alt="placeholder image">
         </div>
@@ -196,8 +208,14 @@
       </section>
 
       <footer class="col12">
-        <h2><span>Footer</span></h2>
-        <nav class="nav-collapse">
+        <div class="col7">
+          <h1 class="brand">
+          Sebastian Albrecht & Duncan Brown 
+          <span class="small-caps">Bespoke Real Estate</span>
+          </h1>
+        </div>
+        <div class="col5 last">
+          <nav class="nav-collapse">
           <ul>
             <li><a href="#About">About</a></li>
             <li><a href="#Services">Services</a></li>
@@ -205,6 +223,7 @@
             <li><a href="#Contact">Contact</a></li>
           </ul>
         </nav>
+        </div>
       </footer>
     </div>
 

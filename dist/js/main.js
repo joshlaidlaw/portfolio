@@ -19,8 +19,16 @@ var mySwiper = new Swiper ('.swiper-container', {
   openPos: "relative",
   pagination: '.swiper-pagination',
   paginationClickable: true,
-  
-})     
+});
+
+var mySwiper = new Swiper ('.testimonial-container', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  openPos: "relative",
+  pagination: '.testimonial-pagination',
+  paginationClickable: true,
+}); 
 
 var nav = responsiveNav(".nav-collapse");
 

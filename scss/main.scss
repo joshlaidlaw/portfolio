@@ -10,14 +10,16 @@
 @import "partials/_typography";
 
 // Components
+@import "components/_header";
 @import "components/_navigation";
-
+@import "components/_footer";
 
 // Layouts
 @import "partials/_grid";
 @import "partials/_header";
 @import "partials/_footer";
 @import "partials/_sidebar";
+@import "partials/_community";
 
 //Pages
 
@@ -27,10 +29,15 @@ hr {
 	background: url("/img/hr-divider.svg") repeat-x;
 	border : 0;
 	height: 4px;
-	margin : 0 0 84px;
+	margin : 72px 0;
 }
 
 .swiper-container {
-    width: 100%;
-    height: 770px;
+  width: 100%;
+  height: 50vh;;
+}
+
+.testimonial-container{
+  width: 100%;
+  height: 50vh;;
 } 

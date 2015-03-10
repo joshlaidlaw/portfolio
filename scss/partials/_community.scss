@@ -1,0 +1,43 @@
+.community {
+  background: url('/img/community_bg.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 120px 0;
+
+  h2{
+    color: $white;
+    margin-bottom: 32px;
+  }
+
+  .community-links {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    width: 218px;
+
+    li {
+      display: inline-block;
+      float: left;
+
+      a {
+        display: block;
+        float: left;
+        height: 93px;
+        overflow: hidden;
+        width: 93px;
+        text-indent: 100%; 
+        white-space: nowrap;
+        text-transform: lowercase;
+      }
+      
+      &.facebook a{
+        background: url('/img/facebook_icon.svg') no-repeat center center;
+        margin-right: 32px;
+      }
+
+      &.twitter a{
+        background: url('/img/twitter_icon.svg') no-repeat center center;
+      }
+    }  
+  }
+}
