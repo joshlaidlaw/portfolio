@@ -15,6 +15,7 @@
 @import "components/_footer";
 @import "components/_testimonial";
 @import "components/_services";
+@import "components/_awards";
 
 // Layouts
 @import "partials/_grid";
@@ -36,5 +37,10 @@ hr {
 
 .swiper-container {
   width: 100%;
-  height: 50vh;;
+  height: 767px;
+
+	.swiper-slide {
+		background: url("/img/_slide/1.jpg") no-repeat;
+	}
+
 }

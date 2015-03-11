@@ -1,0 +1,41 @@
+.awards {
+
+	h5.name {
+		margin-bottom: 1em;
+	}
+
+	ul{
+		font-family: $serif;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+
+		li {
+			font-size: 18px;
+			line-height: 2em;
+		}
+	}
+
+  & > .col12{
+    display: flex; 
+    flex-direction: row;
+    align-items: stretch;
+    margin-bottom: 72px;
+
+    .box {
+      border-right: 1px solid $black;
+      flex: 1 0 0px;
+      margin: 0 30px 0 0;
+      padding: 30px;
+      
+      &:last-child {
+        border: none;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
