@@ -13,6 +13,8 @@
 @import "components/_header";
 @import "components/_navigation";
 @import "components/_footer";
+@import "components/_testimonial";
+@import "components/_services";
 
 // Layouts
 @import "partials/_grid";
@@ -36,8 +38,3 @@ hr {
   width: 100%;
   height: 50vh;;
 }
-
-.testimonial-container{
-  width: 100%;
-  height: 50vh;;
-} 

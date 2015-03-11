@@ -21,12 +21,12 @@ var mySwiper = new Swiper ('.swiper-container', {
   paginationClickable: true,
 });
 
-var mySwiper = new Swiper ('.testimonial-container', {
+var testimonialSwiper = new Swiper ('.testimonialSlider', {
   // Optional parameters
   direction: 'horizontal',
   loop: true,
   openPos: "relative",
-  pagination: '.testimonial-pagination',
+  pagination: '.testimonialPagination',
   paginationClickable: true,
 }); 
 

@@ -75,11 +75,12 @@ h3 {
   margin: 0 auto 30px;
 }
 
-#About {
-  p {
-    width: 85%;
-    margin: 0 auto 30px;
-  }
+h4 {
+  font-family: $san-serif;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 0 1em;
 }
 
 p {
@@ -89,6 +90,12 @@ p {
   font-weight: normal;
   line-height: 1.25em;
   margin: 0 0 1em;
+
+  &.about,
+  &.eighty-five {
+    width: 85%;
+    margin: 0 auto 1em;
+  }
 }
 
 a {
@@ -111,6 +118,10 @@ blockquote {
   font-weight: normal;
   margin: 0;
   text-transform: uppercase;
+}
+
+.invert {
+  color: $white;
 }
 
 .center {
