@@ -1,46 +1,35 @@
-
 //Breakpoints
 $xsmall: 320px;
 $small: 768px;
-$medium: 992px;
-$large:	1200px;
-$xlarge: 1366px;
+$medium: 920px;
+$large:	1100px;
+$xlarge: 1100px;
 
+//Grid Setting
+$grid-columns: 12;
+$grid-half: $grid-columns/2;
+$grid-third: $grid-columns/3;
+$grid-quarter: $grid-columns/4;
+
+$base-layout: (
+  container: auto,
+  columns: 4,
+  gutters: .25,
+  gutter-position: inside,
+  math: fluid,
+  output: isolate,
+);
+
+//Container
+$container-small: layout(auto $grid-third .25 inside fluid isolate);
+$container-medium: layout($medium $grid-half .25 after fluid isolate);
+$container-large: layout($large $grid-columns .25 after fluid isolate);
+$container-xlarge: layout($xlarge $grid-columns .25 after fluid isolate);
+
+//z-index
 $zindex-navbar:            1000 !default;
 $zindex-dropdown:          1000 !default;
 $zindex-popover:           1060 !default;
 $zindex-tooltip:           1070 !default;
 $zindex-navbar-fixed:      1030 !default;
 $zindex-modal:             1040 !default; 
-
-$grid-columns: 12;
-
-$susy: (
-  columns: $grid-columns,
-  container: auto,
-  global-box-sizing: border-box,
-  gutter-position: after
-);
-
-//Container
-$container-small: layout(auto 4 .25 inside fluid isolate);
-$container-medium: layout($medium 12 .25 after fluid isolate);
-$container-large: layout($large 12 .25 after fluid isolate);
-$container-xlarge: layout($xlarge 12 .25 after fluid isolate);
-
-//== Carousel
-$carousel-text-shadow:                        0 1px 2px rgba(0,0,0,.6) !default;
-$carousel-control-color:                      #fff !default;
-$carousel-control-width:                      15% !default;
-$carousel-control-opacity:                    .5 !default;
-$carousel-control-font-size:                  20px !default;
-
-$carousel-indicator-active-bg:                #fff !default;
-$carousel-indicator-border-color:             #fff !default;
-
-$carousel-caption-color:                      #fff !default;
-
-
-
-$serif: 'Droid Serif', serif;
-$san-serif: 'Open Sans Condensed', sans-serif;

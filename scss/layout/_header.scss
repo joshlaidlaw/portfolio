@@ -1,0 +1,17 @@
+header {
+  background: rgba(60, 60, 60, .5);
+  height: 48px;
+  margin: 0 0 275px; 
+
+  .brand {
+    background: #e22d00 url('/img/logo.svg') no-repeat center 80%;
+    background-size: 80%;
+    display: block;
+    height: 175px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    width: 175px;
+  }
+}
