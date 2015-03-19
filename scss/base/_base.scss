@@ -1,5 +1,12 @@
 html {
   background: #3c3c3c url('/img/_bg.jpg') no-repeat center;
   background-size: cover;
+  box-sizing: border-box;
   height: 100%;
+}
+
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
 }

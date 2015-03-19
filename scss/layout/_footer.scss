@@ -4,7 +4,7 @@ footer {
   .s10 {
     margin: 0 auto;
     width: 231px;
-  } 
+  }
 }
 
 .logos {
@@ -12,12 +12,26 @@ footer {
 
   margin: 0 auto 15px;
   width: 50%;
-  
-  img {
-    box-sizing: content-box;
-    float: left; 
-    margin: 15px 5%;
+
+  a {
+    background-size: 80%;
+    display: block;
+    float: left;
+    height: 75px;
+    margin: 0 5%;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
     width: 40%;
+
+    &.cmf {
+      background: url('/img/cmf.svg') no-repeat center;
+    }
+
+    &.lazar {
+      background: url('/img/lazar.svg') no-repeat center right;
+      background-size: auto 70%;
+    }
   }
 }
 
