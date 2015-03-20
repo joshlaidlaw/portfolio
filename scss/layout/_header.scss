@@ -5,7 +5,7 @@ header {
 
   background: rgba(60, 60, 60, .5);
   height: 48px;
-  margin: 0 0 100px;
+  margin: 0 0 50px;
 
   .brand {
     @include breakpoint($small) {

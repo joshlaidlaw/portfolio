@@ -2,13 +2,12 @@
   @include clearfix;
   @include breakpoint ($small) {
     display: flex;
-    margin-bottom: 360px;
   }
 
   align-items: stretch;
   box-sizing: border-box;
   display: block; 
-  margin: 0 0 75px;
+  margin: 0 0 15px;
 
   .img {
     @include breakpoint ($small) {
