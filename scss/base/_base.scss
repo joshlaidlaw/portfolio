@@ -1,8 +1,11 @@
 html {
+  box-sizing: border-box;
+}
+
+body {
+  @include clearfix;
   background: #3c3c3c url('/img/_bg.jpg') no-repeat center;
   background-size: cover;
-  box-sizing: border-box;
-  height: 100%;
 }
 
 *, 

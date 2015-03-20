@@ -1,19 +1,29 @@
 .about {
   @include clearfix;
+  @include breakpoint ($small) {
+    display: flex;
+    margin-bottom: 360px;
+  }
 
   align-items: stretch;
   box-sizing: border-box;
-  display: flex; 
-  margin: 0 0 360px;
+  display: block; 
+  margin: 0 0 75px;
 
   .img {
+    @include breakpoint ($small) {
+      flex-basis: 58%;
+      float: left;
+      height: auto;
+    }
+
     background: transparent url('/img/pet_skills.jpg') no-repeat center;
     background-size: cover;
     box-sizing: border-box;
     content: '';
-    flex-basis: 58%;
-    float: left;
-    overflow: hidden;
+    height: 250px;
+    width: 100%;
+    
   }
 
   img {
@@ -21,9 +31,13 @@
   }
 
   .text {
+    @include breakpoint($small) {
+      border: 1px solid #c8c8c8;
+      border-left: 0;
+    }
+
     background: rgba(20, 20, 20, .6);
-    border: 1px solid #c8c8c8;
-    border-left: 0;
+  
     box-sizing: border-box;
     flex-basis: 42%;
     float: left;
