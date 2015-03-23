@@ -5,6 +5,7 @@ var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var pngquant = require('imagemin-pngquant');
+var critical = require('critical');
 
 gulp.task('styles', function () {
   return gulp.src('scss/main.scss')
@@ -38,7 +39,7 @@ gulp.task('html', ['styles'], function () {
     .pipe($.if('*.css', $.csso()))
     .pipe(assets.restore())
     .pipe($.useref())
-    //.pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
+    .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
     .pipe(gulp.dest('dist'));
 });
 
