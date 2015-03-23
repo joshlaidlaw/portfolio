@@ -39,8 +39,14 @@ footer {
     }
 
     &.lazar {
+
+      @include breakpoint($xsmall) {
+        background-size: auto;
+      }
+
       @include breakpoint($small) {
         background-position: center right;
+        background-size: auto 50%;
       }
 
       background: url('../img/lazar.svg') no-repeat center center;

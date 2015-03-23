@@ -104,6 +104,26 @@ gulp.task('serve', ['styles', 'fonts'], function () {
   gulp.watch('bower.json', ['wiredep', 'fonts']);
 });
 
+gulp.task('copystyles', function () {
+  return gulp.src(['dist/css/main.css'])
+  .pipe($.rename({
+    basename: 'site' // site.css
+  }))
+  .pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('critical', ['build', 'copystyles'], function () {
+  critical.generateInline({
+    base: 'dist/',
+    src: 'index.html',
+    styleTarget: 'css/main.css',
+    htmlTarget: 'index.html',
+    width: 320,
+    height: 1200,
+    minify: true
+  });
+});
+
 gulp.task('wiredep', function () {
   var wiredep = require('wiredep').stream;
 
