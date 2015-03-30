@@ -2,7 +2,6 @@ footer {
   text-align: center;
 
   .s10 {
-    border-top: 1px dotted rgba(220, 220, 220, .6);
     margin: 0 auto 15px;
     padding: 15px 0 0;
     width: 231px;
@@ -61,6 +60,7 @@ footer {
     width: 50%;
   }
 
+  border: 1px dotted rgba(220, 220, 220, .6);
   border-left: 0;
   border-right: 0;
   margin: 0 5% 15px;
