@@ -1,0 +1,11 @@
+html {
+  background: url('../img/_bg.jpg') no-repeat center center fixed; 
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+}

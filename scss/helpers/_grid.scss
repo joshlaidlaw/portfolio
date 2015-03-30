@@ -1,0 +1,16 @@
+// Container widths
+.container {
+  @include container($base-layout);
+
+  @include breakpoint($medium) {
+    @include container($container-medium);
+  }
+
+  @include breakpoint($large) {
+    @include container($container-large);
+  } 
+
+  @include breakpoint($xlarge) {
+    @include container($container-xlarge);
+  } 
+}
