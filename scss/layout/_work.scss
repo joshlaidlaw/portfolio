@@ -1,0 +1,68 @@
+.work {
+  @include clearfix;
+  align-items: flex-start;
+  box-sizing: border-box;
+  color: $black;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-flow: flex-start;
+  flex-wrap: wrap;
+  padding: 3.6rem 0 0;
+  width: 100%;
+
+  .whole {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .half {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  h2 {
+    color: $black;
+    font-size: 3.6rem;
+    font-weight: bold;
+    line-height: 1.25em;
+  }
+
+  p {
+    line-height: 1.5em;
+    margin: 0 0 1em;
+
+    &.intro {
+      color: $black;
+      font: 3.6rem/1em $font-stack;
+      font-weight: 100;
+      margin-bottom: 3.6rem;
+    }
+  }
+}
+
+.case-study {
+  margin: 0;
+  min-height: 285px;
+  padding: 1.5rem 1.5rem 0;
+  transition: all 240ms linear;
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+
+  &.stage10 {
+    background-color: $stage10;
+  }
+
+  &.sfu {
+    background-color: $sfu;
+  }
+
+  &.freelance {
+    background-color: $freelance;
+  }
+}

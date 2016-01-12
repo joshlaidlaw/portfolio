@@ -1,0 +1,22 @@
+<section class="work">
+  <div class="container">
+    <div class="whole">
+      <h2 class="">Things I've worked on</h2>
+    </div>
+    <div class="stage10 case-study half">
+      <h3><a href="stage-ten.html">Stage TEN</a></h3>
+      <p>Mix and combined video without hardware.</p>
+      <img src="img/placeholder.png" alt="placeholder" />
+    </div>
+    <div class="sfu case-study half">
+      <h3 class="">SFU</h3>
+      <p>Canada's number 1 comprehensive university</p>
+      <img src="img/placeholder.png" alt="placeholder" />
+    </div> 
+    <div class="freelance case-study whole">
+      <h3 class="">Freelance</h3>
+      <p class="">Helping to promote a sport in Canada, building leaders for the future and find the next big idea.</p>
+      <img src="img/placeholder.png" alt="placeholder" />
+    </div>
+  </div>
+</section>

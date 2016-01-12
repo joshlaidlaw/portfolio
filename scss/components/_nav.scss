@@ -1,0 +1,55 @@
+nav {
+  float: left;
+
+
+  ul {
+    float: left;
+    margin: 1.8rem 0;
+    padding: 0; 
+  }
+
+  li {
+    display: inline-block;
+    float: left;
+    width: auto;
+
+    a {
+      &.current {
+        border-bottom-color: lighten($brand-primary, 10%);
+        cursor: not-allowed;
+      }
+    }
+
+    &.logo {
+      width: 4rem;
+
+      a {
+        border: 0;
+        margin: 0;
+      }
+
+      &:hover {
+        svg {
+          fill: $brand-primary;
+        }
+      }
+    }
+
+    a {
+      border-bottom: 2px solid $white;
+      color: $brand-primary;
+      display: block;
+      float: left;
+      font-size: 1.5rem;
+      margin: .3rem 0 0 2rem;
+      text-decoration: none;
+      transition: all .5s ease;
+      width: auto;
+
+      &:hover {
+        border-bottom-color: rgba($brand-primary, .5);
+        text-decoration: none;
+      }
+    }
+  }
+}

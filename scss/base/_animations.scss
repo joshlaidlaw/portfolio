@@ -1,0 +1,27 @@
+@keyframes shift-bg-colour {
+  0% {
+    background-color: $brand-primary;
+  }
+
+  50% {
+    background-color: $brand-secondary;
+  }
+
+  100% {
+    background-color: $brand-primary;
+  }
+}
+
+@keyframes shift-colour {
+  0% {
+    color: $brand-primary;
+  }
+
+  50% {
+    color: $brand-secondary;
+  }
+
+  100% {
+    color: $brand-primary;
+  }
+}

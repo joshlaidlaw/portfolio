@@ -1,22 +1,22 @@
 .btn,
 button {
   background: transparent;
-  border: 1px solid #e6e6e6;
+  border: 2px solid $white;
+  border-radius: 3px;
   box-sizing: border-box;
-  color: #ee3c00;
-  display: block;
-  font: 18px/1em "Clear-Sans", sans-serif;
-  margin: 0 0 15px;
-  padding: 15px;
+  color: $white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 0 1.5rem;
+  padding: .6rem;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   transition: all 240ms ease;
-  width: 100%;
 
   &:hover {
-    background: #ee3c00;
-    border-color: #ee3c00;
-    color: #fff;
+    background: $white;
+    border-color: $white;
+    color: $brand-primary;
   }
 }

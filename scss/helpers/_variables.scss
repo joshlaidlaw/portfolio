@@ -20,16 +20,33 @@ $base-layout: (
   output: isolate,
 );
 
+$small-layout: (
+  container: auto,
+  columns: 4,
+  gutters: .25,
+  gutter-position: inside,
+  math: fluid,
+  output: isolate,
+);
+
 //Container
 $container-small: layout(auto $grid-third .25 inside fluid isolate);
 $container-medium: layout($medium $grid-half .25 after fluid isolate);
 $container-large: layout($large $grid-columns .25 after fluid isolate);
 $container-xlarge: layout($xlarge $grid-columns .25 after fluid isolate);
 
-//z-index
-$zindex-navbar:            1000 !default;
-$zindex-dropdown:          1000 !default;
-$zindex-popover:           1060 !default;
-$zindex-tooltip:           1070 !default;
-$zindex-navbar-fixed:      1030 !default;
-$zindex-modal:             1040 !default; 
+
+//Colours
+$black: #000;
+$white: #fff;
+$brand-primary: #0081cb;
+$brand-secondary: #4e008b;
+$grey: #dad8d6;
+
+$stage10: #ff5000;
+$sfu: #f6323e;
+$freelance: #00a887;
+
+//Fonts
+
+$font-stack: "GothamRndSSm-Book", sans-serif;

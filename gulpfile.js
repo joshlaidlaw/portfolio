@@ -2,10 +2,24 @@
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var nunjucksRender = require('gulp-nunjucks-render');
+
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+
 var pngquant = require('imagemin-pngquant');
 var critical = require('critical');
+
+gulp.task('nunjucks', function() {
+  nunjucksRender.nunjucks.configure(['html/templates/']);
+
+  // Gets .html and .nunjucks files in pages
+  return gulp.src('html/pages/**/*.+(html|nunjucks)')
+  // Renders template with nunjucks
+  .pipe(nunjucksRender())
+  // output files in app folder
+  .pipe(gulp.dest('dist'));
+});
 
 gulp.task('styles', function () {
   return gulp.src('scss/main.scss')
@@ -101,6 +115,7 @@ gulp.task('serve', ['styles', 'fonts'], function () {
 
   gulp.watch('scss/**/*.scss', ['styles']);
   gulp.watch('dist/fonts/**/*', ['fonts']);
+  gulp.watch('html/**/*', ['nunjucks']);
   gulp.watch('bower.json', ['wiredep', 'fonts']);
 });
 

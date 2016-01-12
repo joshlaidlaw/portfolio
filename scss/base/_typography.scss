@@ -1,46 +1,13 @@
-@font-face {
-  font-family: 'Clear-Sans';
-  src: url('../fonts/ClearSans-Light-webfont.eot');
-  src: url('../fonts/ClearSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/ClearSans-Light-webfont.woff2') format('woff2'),
-       url('../fonts/ClearSans-Light-webfont.woff') format('woff'),
-       url('../fonts/ClearSans-Light-webfont.ttf') format('truetype');
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Clear-Sans';
-  src: url('../fonts/ClearSans-Bold-webfont.eot');
-  src: url('../fonts/ClearSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/ClearSans-Bold-webfont.woff2') format('woff2'),
-       url('../fonts/ClearSans-Bold-webfont.woff') format('woff'),
-       url('../fonts/ClearSans-Bold-webfont.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Clear-Sans';
-  src: url('../fonts/ClearSans-Regular-webfont.eot');
-  src: url('../fonts/ClearSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/ClearSans-Regular-webfont.woff2') format('woff2'),
-       url('../fonts/ClearSans-Regular-webfont.woff') format('woff'),
-       url('../fonts/ClearSans-Regular-webfont.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 h1 { 
-  color: #fff;
-  font-family: 'Clear-Sans';
+  color: $white;
+  font-family: "GothamRndSSm-Book", sans-serif;
+  margin: 0 0 1rem;
 }
 
 h2 {
-  color: #0df;
-  font: 21px/1.2em 'Clear-Sans', sans-serif;
-  font-weight: 100;
-  margin: 0 0 15px;
+  color: $white;
+  font: 3.6rem/1em "GothamRndSSm-Book", "acumin-pro", sans-serif;
+  margin: 0;
 
   &.rule {
     border-top: 1px dotted rgba(220, 220, 200, .6);
@@ -48,13 +15,37 @@ h2 {
   }
 }
 
+h3 {
+  color: $white;
+  font-size: 3.0rem;
+  line-height: 1.25em;
+  font-weight: normal;
+  margin: 0;
+}
+
+h4 {
+  color: rgba($white, .25);
+  font-size: 1.2rem;
+  line-height: 1.25em;
+  font-weight: bold;
+  margin: 0 0 1em;
+}
+
 p {
-  color: #aaa;
-  font: 15px/1.25em 'Clear-Sans', sans-serif;
+  color: $white;
+  font: 1.8rem/1.5em "GothamRndSSm-Book", "acumin-pro", sans-serif;
+  font-weight: 100;
   margin: 0 0 1em;
 }
 
 a {
-  color: #ee3c00;
-  font-family: 'Clear-Sans';
+  color: $white;
+  font-family: "GothamRndSSm-Book", "acumin-pro", sans-serif;
+  font-size: 1em;
+  text-decoration: underline;
+}
+
+.intro {
+  font-size: 3.6rem;
+  font-weight: 100;
 }

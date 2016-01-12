@@ -1,45 +1,29 @@
 .about {
   @include clearfix;
-  @include breakpoint ($small) {
-    display: flex;
+  align-items: flex-start;
+  background-color: $brand-primary;
+  color: $white;
+  display: flex;
+  flex-direction: row;
+  flex-flow: flex-start;
+  padding: 3.6rem 0;
+  width: 100%;
+
+  h2 {
+    font-size: 3.6rem;
+    line-height: 3.6rem;
+    font-weight: bold;
   }
 
-  align-items: stretch;
-  box-sizing: border-box;
-  display: block; 
-  margin: 0 0 15px;
+  p {
+    line-height: 1.5em;
+    margin: 0 0 1em;
 
-  .img {
-    @include breakpoint ($small) {
-      flex-basis: 58%;
-      float: left;
-      height: auto;
+    &.intro {
+      color: $white;
+      font: 3.6rem/1em $font-stack;
+      font-weight: 100;
+      margin: 0;
     }
-
-    background: transparent url('../img/pet_skills.jpg') no-repeat center;
-    background-size: cover;
-    box-sizing: border-box;
-    content: '';
-    height: 250px;
-    width: 100%;
-    
-  }
-
-  img {
-    display: block;
-  }
-
-  .text {
-    @include breakpoint($small) {
-      border: 1px solid #c8c8c8;
-      border-left: 0;
-    }
-
-    background: rgba(20, 20, 20, .6);
-  
-    box-sizing: border-box;
-    flex-basis: 42%;
-    float: left;
-    padding: 15px 15px 0;
   }
 }

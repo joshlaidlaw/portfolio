@@ -1,6 +1,21 @@
+// Grid system
+
+section {
+  @include clearfix;
+  float: left;
+  margin: 0;
+}
+
 // Container widths
 .container {
-  @include container($base-layout);
+  @include container($small-layout);
+  @include clearfix;
+  padding: 0 15px;
+
+  @include breakpoint($small) {
+    @include container($small-layout);
+    padding: 0;
+  }
 
   @include breakpoint($medium) {
     @include container($container-medium);
@@ -14,3 +29,49 @@
     @include container($container-xlarge);
   } 
 }
+
+@mixin make-grid-columns {
+
+  @for $i from 1 through $grid-columns {
+    .col#{$i} {
+      @include span($grid-columns of $grid-columns);
+      overflow: hidden;
+
+      @include breakpoint($small) {
+        @if $i == 3 {
+          @include span(6 of $grid-columns);
+          &.last,
+          &:nth-child(even) {
+            @include span(6 of $grid-columns last);
+          }
+        } @else {
+          @include span($i of $grid-columns);
+          &.last {
+            @include span($i of $grid-columns last);
+          }
+        }
+      }
+
+      @include breakpoint($medium) {
+        @include span($i of $grid-columns);
+        &:nth-child(even) {
+          @include span($i of $grid-columns);
+        }
+
+        &.last {
+          @include span($i of $grid-columns last);
+        }
+      }
+
+      @include breakpoint($large) {
+        @include span($i of $grid-columns);
+
+        &.last {
+          @include span($i of $grid-columns last);
+        }
+      }
+    }
+  }
+}
+
+@include make-grid-columns;
