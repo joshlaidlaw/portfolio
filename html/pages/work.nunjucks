@@ -1,12 +1,13 @@
-<!-- index.nunjucks -->
+<!-- work.nunjucks -->
 {% extends "layout.nunjucks" %}
 
 {% block content %}
+
 <div class="wrap container-fluid">
   {% import 'macros/nav-macro.nunjucks' as nav %}
-  {{nav.active('home')}}
+  {{nav.active('work')}}
 </div>
 
-{% include "partials/about.nunjucks" %}
 {% include "partials/work.nunjucks" %}
+
 {% endblock %}

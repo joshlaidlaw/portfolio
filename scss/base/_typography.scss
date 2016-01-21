@@ -6,7 +6,7 @@ h1 {
 
 h2 {
   color: $white;
-  font: 3.6rem/1em "GothamRndSSm-Book", "acumin-pro", sans-serif;
+  font: bold 3.6rem/1em "GothamRndSSm-Book", sans-serif;
   margin: 0;
 
   &.rule {
@@ -17,9 +17,9 @@ h2 {
 
 h3 {
   color: $white;
-  font-size: 3.0rem;
-  line-height: 1.25em;
+  font-size: 3rem;
   font-weight: normal;
+  line-height: 1.25em;
   margin: 0;
 }
 

@@ -3,13 +3,13 @@
 
 {% block content %}
 
-<div class="container">
+<div class="wrap container-fluid">
   {% import 'macros/nav-macro.nunjucks' as nav %}
   {{nav.active('about')}}
 </div>
 
 <section class="about">
-  <div class="container">
+  <div class="wrap container-fluid">
       <div class="col3">
         <h2>About Me</h2>
       </div>

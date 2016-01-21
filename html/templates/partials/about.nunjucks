@@ -1,7 +1,11 @@
 <section class="about">
-  <div class="container">
-    <h2>Hello,</h2>
-    <p class="intro">I'm Josh Laidlaw —</p>
-    <p class="intro">and I'm a designer and front-end developer in Vancouver, BC.</p>
+  <div class="wrap container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-5 col-lg-5">
+        <h2>Hello,</h2>
+        <p class="intro">I'm Josh Laidlaw —</p>
+        <p class="intro">and I'm a designer and front-end developer in Vancouver, BC.</p>
+      </div>
+    </div>
   </div>
 </section>

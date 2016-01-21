@@ -1,4 +1,4 @@
-<!-- index.nunjucks -->
+<!-- sfu.nunjucks -->
 {% extends "layout.nunjucks" %}
 
 {% block content %}
@@ -7,6 +7,5 @@
   {{nav.active('home')}}
 </div>
 
-{% include "partials/about.nunjucks" %}
-{% include "partials/work.nunjucks" %}
+{% include "partials/sfu.nunjucks" %}
 {% endblock %}
