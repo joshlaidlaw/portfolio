@@ -3,13 +3,25 @@
     <div class="row stretch">
       <div class="col-xs-12 col-sm-6 stage10 box case-study">
         <h3><a href="stage-ten.html">Stage TEN</a></h3>
-        <p>Mix and combined live video in the cloud.</p>
-        <img src="img/TJ_framed_400x259.png" alt="Stage TEN cloud-based control room" />
+        <p>Mix and combine live video in the cloud.</p>
+        <picture>
+          <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="img/TJ_framed_large_@1x.png, img/TJ_framed_@2x.png 2x" media="(min-width: 800px)">
+          <source srcset="img/TJ_framed_@1x.png, img/TJ_framed_@2x.png 2x">
+          <!--[if IE 9]></video><![endif]-->
+          <img srcset="img/TJ_framed_@1x.jpg, img/TJ_framed_@2x.png 2x" alt="Stage TEN's cloud-based control room">
+        </picture>
       </div>
       <div class="col-xs-12 col-sm-6 sfu box case-study">
         <h3 class=""><a href="sfu.html">SFU</a></h3>
         <p>Canada's top comprehensive university.</p>
-        <img src="img/sfu_homepage_400x259.png" alt="SFU's homepage cica 2012" />
+        <picture>
+          <!--[if IE 9]><video style="display: none;"><![endif]-->
+          <source srcset="img/sfu_large_@1x.png, img/sfu_framed_large_@2x.png 2x" media="(min-width: 800px)">
+          <source srcset="img/sfu_large_@1x.png, img/sfu_framed_large_@2x.png 2x">
+          <!--[if IE 9]></video><![endif]-->
+          <img srcset="img/sfu_large_@1x.png, img/sfu_large_@2x.png 2x" alt="SFU's homepage cica 2012">
+        </picture>
       </div>
       <div class="col-xs-12 freelance box case-study">
         <h3 class=""><a href="freelance.html">Freelance</a></h3>

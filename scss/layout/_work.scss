@@ -39,14 +39,6 @@
   min-height: 285px;
   padding: 1.5rem 1.5rem 0;
   transition: all 240ms linear;
-
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    vertical-align: bottom;
-  }
-
 }
 
 .stage10 {
@@ -59,4 +51,12 @@
 
 .freelance {
   background-color: $freelance;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: bottom;
+  width: 100%;
 }

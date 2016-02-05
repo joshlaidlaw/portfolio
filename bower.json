@@ -24,7 +24,8 @@
     "jquery": "~2.1.3",
     "responsive-nav": "~1.0.39",
     "filament-sticky": "~0.1.6",
-    "flexboxgrid": "~6.3.0"
+    "flexboxgrid": "~6.3.0",
+    "picturefill": "~3.0.1"
   },
   "devDependencies": {
     "html5shiv": "~3.7.2",
