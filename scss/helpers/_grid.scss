@@ -16,6 +16,10 @@ section {
 .container {
   margin-right: auto;
   margin-left: auto;
+
+  &--image {
+    margin-bottom: 1.5rem;
+  }
 }
 
 .container-fluid {
@@ -41,8 +45,14 @@ section {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -0.75rem;
-  margin-left: -0.75rem;
+  margin-right: -.75rem;
+  margin-left: -.75rem;
+
+  @include breakpoint($xsmall) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
 }
 
 .row.reverse {

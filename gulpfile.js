@@ -10,6 +10,7 @@ var reload = browserSync.reload;
 var pngquant = require('imagemin-pngquant');
 var critical = require('critical');
 
+
 gulp.task('nunjucks', function() {
   nunjucksRender.nunjucks.configure(['html/templates/']);
 

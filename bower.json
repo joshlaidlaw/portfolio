@@ -25,7 +25,8 @@
     "responsive-nav": "~1.0.39",
     "filament-sticky": "~0.1.6",
     "flexboxgrid": "~6.3.0",
-    "picturefill": "~3.0.1"
+    "picturefill": "~3.0.1",
+    "Swiper": "swiper#^3.3.0"
   },
   "devDependencies": {
     "html5shiv": "~3.7.2",
