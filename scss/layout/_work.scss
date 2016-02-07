@@ -47,6 +47,25 @@
 
 .sfu {
   background-color: $sfu;
+
+  .swiper-pagination-bullet {
+    background: $white;
+    border: 2px solid $sfu;
+    transition: all 240ms linear;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: $sfu;
+    border-color: $white;
+    opacity: 1;
+  }
+
+  .cd-handle.draggable {
+    /* change background color when element is active */
+    background-color: $sfu;
+    border: 2px solid $sfu;
+
+  }
 }
 
 .freelance {

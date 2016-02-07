@@ -3,7 +3,7 @@ console.log("main.js");
 var swiper = new Swiper('.swiper-container', {
   pagination: '.swiper-pagination',
   paginationClickable: true,
-  slidesPerView: 4,
+  slidesPerView: 3,
   spaceBetween: 30,
   breakpoints: {
       1100: {
