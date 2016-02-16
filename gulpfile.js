@@ -37,6 +37,16 @@ gulp.task('styles', function () {
     .pipe(reload({stream:true}));
 });
 
+gulp.task('js', function (){
+  console.log('Javascript');
+  return gulp.src('js/*.js')
+  .pipe($.jshint())
+  .pipe($.jshint.reporter('jshint-stylish'))
+  .pipe($.concat('main.js'))
+  .pipe($.uglify())
+  .pipe(gulp.dest('dist/js'));
+});
+
 gulp.task('jshint', function () {
   return gulp.src('js/*.js')
     .pipe(reload({stream: true, once: true}))
@@ -109,12 +119,13 @@ gulp.task('serve', ['styles', 'fonts'], function () {
   // watch for changes
   gulp.watch([
     'dist/*.html',
-    'dist/scripts/**/*.js',
+    'dist/js/**/*.js',
     'dist/images/**/*',
     'dist/fonts/**/*'
   ]).on('change', reload);
 
   gulp.watch('scss/**/*.scss', ['styles']);
+  gulp.watch('js/**/*.js', ['js']);
   gulp.watch('dist/fonts/**/*', ['fonts']);
   gulp.watch('html/**/*', ['nunjucks']);
   gulp.watch('bower.json', ['wiredep', 'fonts']);
