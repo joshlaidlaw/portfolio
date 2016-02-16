@@ -1,5 +1,3 @@
-console.log("main.js");
-
 var swiper = new Swiper('.swiper-container', {
   pagination: '.swiper-pagination',
   paginationClickable: true,
@@ -23,6 +21,13 @@ var swiper = new Swiper('.swiper-container', {
           spaceBetween: 15
       }
   }
+});
+
+var webSwiper = new Swiper('.swiper-container-web', {
+  pagination: '.swiper-pagination-web',
+  paginationClickable: true,
+  slidesPerView: 1,
+  spaceBetween: 30,
 });
 
 jQuery(document).ready(function($){

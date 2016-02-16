@@ -43,6 +43,25 @@
 
 .stage10 {
   background-color: $stage10;
+
+  .swiper-pagination-bullet {
+    background: $white;
+    border: 2px solid $sfu;
+    transition: all 240ms linear;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: $stage10;
+    border-color: $white;
+    opacity: 1;
+  }
+
+  .cd-handle.draggable {
+    /* change background color when element is active */
+    background-color: $stage10;
+    border: 2px solid $stage10;
+
+  }
 }
 
 .sfu {
