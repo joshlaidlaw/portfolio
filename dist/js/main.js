@@ -1,3 +1,6 @@
+var videoPreview = document.getElementsByClassName("mobile-video");
+var video = document.getElementsByTagName('video');
+
 var swiper = new Swiper('.swiper-container', {
   pagination: '.swiper-pagination',
   paginationClickable: true,
