@@ -37,6 +37,12 @@ jQuery(document).ready(function($){
         }
     }
   });
+
+    var swiperWeb = new Swiper('.swiper-container-web', {
+    pagination: '.pagination-web',
+    paginationClickable: true,
+    spaceBetween: 30
+  });
   
   //check if the .cd-image-container is in the viewport 
   //if yes, animate it

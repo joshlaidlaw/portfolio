@@ -54,28 +54,23 @@
 
     <div class="wrap container-fluid--image">
     <div class="row stretch">
-      <!-- Swiper -->
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img srcset="img/sfu/email/alumni_invite@1x.png, img/sfu/email/alumni_invite@2x.png 2x" alt="">
+      <div class="col12">
+        <!-- Swiper -->
+        <div class="swiper-container-web">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img srcset="img/s10/s10_marketing_v2.png, img/s10_marketing_v2.png 2x" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img srcset="img/s10/s10_marketing_v1.png, img/s10_marketing_v1.png 2x" alt="">
+            </div>
           </div>
-          <div class="swiper-slide">
-            <img srcset="img/sfu/email/farewell_invite@1x.png, img/sfu/email/farewell_invite@2x.png 2x" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img srcset="img/sfu/email/gen_invite@1x.png, img/sfu/email/gen_invite@2x.png 2x" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img srcset="img/sfu/email/goldcorp@1x.png, img/sfu/email/goldcorp@2x.png 2x" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img srcset="img/sfu/email/psq_invite@1x.png, img/sfu/email/psq_invite@2x.png 2x" alt="">
-          </div>
+          <!-- Add Pagination -->
+          <div class="pagination-web"></div>
         </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+
       </div>
+      
     </div>
   </div>
 </section>

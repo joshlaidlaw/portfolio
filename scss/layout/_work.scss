@@ -44,8 +44,15 @@
 .stage10 {
   background-color: $stage10;
 
+  .pagination-web {
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    transition: 300ms;
+    z-index: 10;
+  }
+
   .swiper-pagination-bullet {
-    background: darkern($stage10, 10);
+    background: darken($stage10, 50%);
     border: 0;
     transition: all 240ms linear;
   }
@@ -66,7 +73,7 @@
   background-color: $sfu;
 
   .swiper-pagination-bullet {
-    background: darkern($stage10, 10);
+    background: darken($sfu, 50%);
     border: 0;
     transition: all 240ms linear;
   }
@@ -89,6 +96,7 @@
 
 img {
   display: block;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
   vertical-align: bottom;
