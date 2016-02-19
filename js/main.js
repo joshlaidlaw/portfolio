@@ -38,10 +38,17 @@ jQuery(document).ready(function($){
     }
   });
 
-    var swiperWeb = new Swiper('.swiper-container-web', {
+  var swiperWeb = new Swiper('.swiper-container-web', {
     pagination: '.pagination-web',
     paginationClickable: true,
     spaceBetween: 30
+  });
+
+  var swiperNVBC = new Swiper('.swiper-container-nvbc', {
+    pagination: '.pagination-web',
+    paginationClickable: true,
+    spaceBetween: 30,
+    slidesPerView: 2
   });
   
   //check if the .cd-image-container is in the viewport 

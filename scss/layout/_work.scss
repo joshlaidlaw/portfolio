@@ -92,6 +92,13 @@
 
 .freelance {
   background-color: $freelance;
+
+  .pagination-web {
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    transition: 300ms;
+    z-index: 10;
+  }
 }
 
 img {

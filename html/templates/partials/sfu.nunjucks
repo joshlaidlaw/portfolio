@@ -36,7 +36,8 @@
 
   <div class="wrap container-fluid--image">
     <div class="row stretch">
-      <!-- Swiper -->
+    <div class="col12">
+          <!-- Swiper -->
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -58,6 +59,7 @@
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
       </div>
+    </div>
     </div>
   </div>
 
