@@ -74,6 +74,5 @@
     </div>
   </div>
 </section>
-
-
-</section>
+{% import 'macros/work-macro.nunjucks' as work %}
+{{work.active('stageten')}}
