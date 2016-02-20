@@ -64,7 +64,7 @@ jQuery(document).ready(function($){
     pagination: '.pagination-hpac',
     paginationClickable: true,
     spaceBetween: 30,
-    slidesPerView: 2
+    slidesPerView: 1
   });
   
   //check if the .cd-image-container is in the viewport 

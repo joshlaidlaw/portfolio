@@ -87,13 +87,19 @@
         <div class="swiper-container-hpac">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+              <img srcset="img/freelance/hpac/hpac_stationery.png, img/freelance/hpac/hpac_stationery@2x.png 2x" alt="">
             </div>
             <div class="swiper-slide">
-              <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+              <img srcset="img/freelance/hpac/hpac_newsletter.png, img/freelance/hpac/hpac_newsletter@2x.png 2x" alt="">
             </div>
             <div class="swiper-slide">
-              <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+              <img srcset="img/freelance/hpac/hpac_calendar.png, img/freelance/hpac/hpac_calendar@2x.png 2x" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img srcset="img/freelance/hpac/hpac_banner.png, img/freelance/hpac/hpac_banner@2x.png 2x" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img srcset="img/freelance/hpac/hpac_awards.png, img/freelance/hpac/hpac_awards@2x.png 2x" alt="">
             </div>
           </div>
           <!-- Add Pagination -->
