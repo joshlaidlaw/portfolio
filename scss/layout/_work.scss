@@ -93,11 +93,22 @@
 .freelance {
   background-color: $freelance;
 
-  .pagination-web {
+  .pagination-nvbc {
     text-align: center;
     transform: translate3d(0, 0, 0);
     transition: 300ms;
     z-index: 10;
+  }
+
+  .swiper-pagination-bullet {
+    background: darken($freelance, 50%);
+    border: 0;
+    transition: all 240ms linear;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: $white;
+    opacity: 1;
   }
 }
 

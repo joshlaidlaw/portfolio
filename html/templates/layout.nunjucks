@@ -22,6 +22,7 @@
 
     </head>
   <body>
+    <div class="breakpoint"></div>
     {% block content %} {% endblock %}
     {% include "partials/footer.nunjucks" %}
 

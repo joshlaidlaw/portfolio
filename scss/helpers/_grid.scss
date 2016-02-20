@@ -1075,52 +1075,78 @@ section {
 
 
 
-// // Container widths
-// .container {
-//   @include container($small-layout);
-//   padding: 0 15px;
+// Container widths
+.breakpoint {
+  @include container($small-layout);
+  padding: 0 15px;
+  
+  &:before {
+    background-color: orange;
+    content: '$mobile';
+  }
 
-//   @include breakpoint($small) {
-//     @include container($small-layout);
-//     padding: 0;
-//   }
+  @include breakpoint($small) {
+    @include container($small-layout);
+    padding: 0;
+    &:before {
+      background-color: purple;
+      content: "$small";
+    }
+  }
 
-//   @include breakpoint($medium) {
-//     @include container($container-medium);
-//   }
+  @include breakpoint($medium) {
+    @include container($container-medium);
+    &:before {
+      background-color: blue;
+      content: "$medium";
+    }
+  }
 
-//   @include breakpoint($large) {
-//     @include container($container-large);
-//   } 
+  @include breakpoint($large) {
+    @include container($container-large);
+    &:before {
+      background-color: red;
+      content: "$large";
+    }
+  } 
 
-//   @include breakpoint($xlarge) {
-//     @include container($container-xlarge);
-//   } 
-// }
+  @include breakpoint($xlarge) {
+    @include container($container-xlarge);
+  } 
+}
 
 @mixin make-grid-columns {
 
   @for $i from 1 through $grid-columns {
     .col#{$i} {
       @include span($grid-columns of $grid-columns);
+      margin: 0 auto;
       overflow: hidden;
 
       @include breakpoint($small) {
-        @if $i == 3 {
-          @include span(6 of $grid-columns);
+
+
+        @if $i <= 3 {
+          margin: 0;
+          @include span(6 of $grid-columns .25);
           &.last,
           &:nth-child(even) {
-            @include span(6 of $grid-columns last);
+            margin: 0;
+            @include span(6 of $grid-columns .25 last);
           }
         } @else {
-          @include span($i of $grid-columns);
+          margin: 0 auto;
+          @include span($i of $grid-columns 0);
+
           &.last {
-            @include span($i of $grid-columns last);
+            margin: 0;
+            @include span($i of $grid-columns .25 last);
           }
         }
       }
 
       @include breakpoint($medium) {
+        margin: 0;
         @include span($i of $grid-columns);
         &:nth-child(even) {
           @include span($i of $grid-columns);

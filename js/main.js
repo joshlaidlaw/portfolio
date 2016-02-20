@@ -45,7 +45,7 @@ jQuery(document).ready(function($){
   });
 
   var swiperNVBC = new Swiper('.swiper-container-nvbc', {
-    pagination: '.pagination-web',
+    pagination: '.pagination-nvbc',
     paginationClickable: true,
     spaceBetween: 30,
     slidesPerView: 2

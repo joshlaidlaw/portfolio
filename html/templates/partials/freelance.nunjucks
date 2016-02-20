@@ -27,7 +27,7 @@
           </div>
         </div>
         <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+        <div class="pagination-nvbc"></div>
       </div>
     </div>
   </div>
@@ -50,5 +50,6 @@
     </div>
   </div>
 </section>
+
 {% import 'macros/work-macro.nunjucks' as work %}
 {{work.active('freelance')}}
