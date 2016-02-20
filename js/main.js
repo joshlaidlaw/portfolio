@@ -52,6 +52,20 @@ jQuery(document).ready(function($){
     spaceBetween: 30,
     slidesPerView: 2
   });
+
+  var swiperAC = new Swiper('.swiper-container-ac', {
+    pagination: '.pagination-ac',
+    paginationClickable: true,
+    spaceBetween: 30,
+    slidesPerView: 2
+  });
+
+    var swiperHPAC = new Swiper('.swiper-container-hpac', {
+    pagination: '.pagination-hpac',
+    paginationClickable: true,
+    spaceBetween: 30,
+    slidesPerView: 2
+  });
   
   //check if the .cd-image-container is in the viewport 
   //if yes, animate it
