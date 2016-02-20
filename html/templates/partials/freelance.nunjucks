@@ -14,20 +14,22 @@
   <div class="wrap container-fluid--image">
     <div class="row stretch">
       <!-- Swiper -->
-      <div class="swiper-container-nvbc">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+      <div class="col12">
+        <div class="swiper-container-nvbc">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+            </div>
           </div>
-          <div class="swiper-slide">
-            <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
-          </div>
+          <!-- Add Pagination -->
+          <div class="pagination-nvbc"></div>
         </div>
-        <!-- Add Pagination -->
-        <div class="pagination-nvbc"></div>
       </div>
     </div>
   </div>
@@ -47,20 +49,22 @@
   <div class="wrap container-fluid--image">
     <div class="row stretch">
       <!-- Swiper -->
-      <div class="swiper-container-ac">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+      <div class="col12">
+        <div class="swiper-container-ac">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+            </div>
           </div>
-          <div class="swiper-slide">
-            <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
-          </div>
+          <!-- Add Pagination -->
+          <div class="pagination-ac"></div>
         </div>
-        <!-- Add Pagination -->
-        <div class="pagination-ac"></div>
       </div>
     </div>
   </div>
@@ -79,20 +83,22 @@
   <div class="wrap container-fluid--image">
     <div class="row stretch">
       <!-- Swiper -->
-      <div class="swiper-container-hpac">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+      <div class="col12">
+        <div class="swiper-container-hpac">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+            </div>
           </div>
-          <div class="swiper-slide">
-            <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
-          </div>
+          <!-- Add Pagination -->
+          <div class="pagination-hpac"></div>
         </div>
-        <!-- Add Pagination -->
-        <div class="pagination-hpac"></div>
       </div>
     </div>
   </div>
