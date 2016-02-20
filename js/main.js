@@ -24,7 +24,7 @@ jQuery(document).ready(function($){
             spaceBetween: 30
         },
         768: {
-            slidesPerView: 4,
+            slidesPerView: 2,
             spaceBetween: 30
         },
         640: {
@@ -41,7 +41,9 @@ jQuery(document).ready(function($){
   var swiperWeb = new Swiper('.swiper-container-web', {
     pagination: '.pagination-web',
     paginationClickable: true,
-    spaceBetween: 30
+    spaceBetween: 30,
+    preloadImages: true,
+    lazyLoading: true
   });
 
   var swiperNVBC = new Swiper('.swiper-container-nvbc', {
