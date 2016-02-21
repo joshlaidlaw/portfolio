@@ -50,14 +50,14 @@ jQuery(document).ready(function($){
     pagination: '.pagination-nvbc',
     paginationClickable: true,
     spaceBetween: 30,
-    slidesPerView: 2
+    slidesPerView: 1
   });
 
   var swiperAC = new Swiper('.swiper-container-ac', {
     pagination: '.pagination-ac',
     paginationClickable: true,
     spaceBetween: 30,
-    slidesPerView: 2
+    slidesPerView: 1
   });
 
     var swiperHPAC = new Swiper('.swiper-container-hpac', {
