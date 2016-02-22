@@ -1075,45 +1075,45 @@ section {
 
 
 
-// Container widths
-.breakpoint {
-  @include container($small-layout);
-  padding: 0 15px;
+// // Container widths
+// .breakpoint {
+//   @include container($small-layout);
+//   padding: 0 15px;
   
-  &:before {
-    background-color: orange;
-    content: '$mobile';
-  }
+//   &:before {
+//     background-color: orange;
+//     content: '$mobile';
+//   }
 
-  @include breakpoint($small) {
-    @include container($small-layout);
-    padding: 0;
-    &:before {
-      background-color: purple;
-      content: "$small";
-    }
-  }
+//   @include breakpoint($small) {
+//     @include container($small-layout);
+//     padding: 0;
+//     &:before {
+//       background-color: purple;
+//       content: "$small";
+//     }
+//   }
 
-  @include breakpoint($medium) {
-    @include container($container-medium);
-    &:before {
-      background-color: blue;
-      content: "$medium";
-    }
-  }
+//   @include breakpoint($medium) {
+//     @include container($container-medium);
+//     &:before {
+//       background-color: blue;
+//       content: "$medium";
+//     }
+//   }
 
-  @include breakpoint($large) {
-    @include container($container-large);
-    &:before {
-      background-color: red;
-      content: "$large";
-    }
-  } 
+//   @include breakpoint($large) {
+//     @include container($container-large);
+//     &:before {
+//       background-color: red;
+//       content: "$large";
+//     }
+//   } 
 
-  @include breakpoint($xlarge) {
-    @include container($container-xlarge);
-  } 
-}
+//   @include breakpoint($xlarge) {
+//     @include container($container-xlarge);
+//   } 
+// }
 
 @mixin make-grid-columns {
 

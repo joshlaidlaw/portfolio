@@ -53,13 +53,10 @@
         <div class="swiper-container-ac">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+              <img srcset="img/freelance/ac/ac_10_program.png, img/freelance/ac/ac_10_program@2x.png 2x" alt="">
             </div>
             <div class="swiper-slide">
-              <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img srcset="img/freelance/nvbc/nvbc_annual_report_2015.png, img/freelance/nvbc/nvbc_annual_report_2015.png 2x" alt="">
+              <img srcset="img/freelance/ac/ac_newsletter.png, img/freelance/ac/ac_newsletter@2x.png 2x" alt="">
             </div>
           </div>
           <!-- Add Pagination -->
