@@ -53,6 +53,12 @@
         <div class="swiper-container-ac">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
+              <img srcset="img/freelance/ac/ac_ar.png, img/freelance/ac/ac_ar@2x.png 2x" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img srcset="img/freelance/ac/ac_ar_inside.png, img/freelance/ac/ac_ar_inside@2x.png 2x" alt="">
+            </div>
+            <div class="swiper-slide">
               <img srcset="img/freelance/ac/ac_10_oped.png, img/freelance/ac/ac_10_oped@2x.png 2x" alt="">
             </div>
             <div class="swiper-slide">
