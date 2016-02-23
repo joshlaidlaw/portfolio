@@ -144,7 +144,13 @@
         <div class="col-xs-12 col-sm-6 freelance box case-study">
           <h3 class=""><a href="freelance.html">Freelance</a></h3>
           <p class="">Helping to promote a sport in Canada, building leaders for the future and find the next big idea.</p>
-          <img src="img/placeholder.png" alt="placeholder" />
+          <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source srcset="img/freelance/freelance.png, img/freelance/freelance@2x.png 2x" media="(min-width: 800px)">
+            <source srcset="img/freelance/freelance.png, img/freelance/freelance@2x.png 2x">
+            <!--[if IE 9]></video><![endif]-->
+            <img srcset="img/freelance/freelance.png, img/freelance/freelance@2x.png 2x" alt="Some examples of work I've done for clients">
+          </picture>
         </div>
       
     </div>
@@ -171,7 +177,7 @@
     <!-- endbuild -->
 
     <!-- build:js js/main.js -->
-    <script src="js/main.js"></script>
+    <script async src="js/main.js"></script>
     <!-- endbuild -->
     </div>
 

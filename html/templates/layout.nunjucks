@@ -38,7 +38,7 @@
     <!-- endbuild -->
 
     <!-- build:js js/main.js -->
-    <script src="js/main.js"></script>
+    <script async src="js/main.js"></script>
     <!-- endbuild -->
     </div>
 
