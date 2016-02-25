@@ -114,19 +114,12 @@
   }
 }
 
-img {
+img,
+picture {
   display: block;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
   vertical-align: bottom;
   width: 100%;
-}
-
-video {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  vertical-align: bottom;
-  width: 320px;
 }

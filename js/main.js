@@ -1,15 +1,4 @@
-// Josh Testing
-// var videoPreview = document.getElementsByClassName("mobile-video");
-// var video = document.getElementById('media-video');
-
-// video.addEventListener("mouseenter", function( event ) {   
-//     // highlight the mouseenter target
-//     video.play();
-//   }, false);
-
-// video.addEventListener("mouseout", function(event) {
-//   video.pause();
-// }, false);
+document.createElement( "picture" );
 
 jQuery(document).ready(function($){
 
@@ -32,7 +21,7 @@ jQuery(document).ready(function($){
             spaceBetween: 30
         },
         320: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 15
         }
     }
@@ -43,14 +32,32 @@ jQuery(document).ready(function($){
     paginationClickable: true,
     spaceBetween: 30,
     preloadImages: true,
-    lazyLoading: true
+    lazyLoading: true,
+    breakpoints: {
+        1100: {
+            slidesPerView: 1,
+            spaceBetween: 30
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 30
+        },
+        640: {
+            slidesPerView: 1,
+            spaceBetween: 15
+        },
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 0
+        }
+    }
   });
 
   var swiperNVBC = new Swiper('.swiper-container-nvbc', {
     pagination: '.pagination-nvbc',
     paginationClickable: true,
-    spaceBetween: 30,
-    slidesPerView: 1
+    spaceBetween: 0,
+    slidesPerView: 1,
   });
 
   var swiperAC = new Swiper('.swiper-container-ac', {

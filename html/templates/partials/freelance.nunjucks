@@ -6,7 +6,8 @@
       </div>
 
       <div class="col6">
-        <p class="intro">For the past nine years I provided design services for several organizations including design of websites, annual reports, and event invitations.</p>
+        <p class="">For the past nine years I provided design services for several organizations including design of websites, annual reports, and event invitations.</p>
+        <h3>New Ventures BC</h3>
       </div>
     </div>
   </div>
@@ -15,9 +16,110 @@
     <div class="row stretch">
       <!-- Swiper -->
       <div class="col12">
+      <figure>
+        <picture>
+          <source
+
+            media="(min-width: 1100px)"
+            sizes="100vw"
+            srcset="img/test/fullshot-1100.png 1100w,
+                    img/test/fullshot-2200.png 2200w">
+          <source
+
+            media="(min-width: 768px)"
+            sizes="100vw"
+            srcset="img/test/medium-768.png 768w,
+                    img/test/medium-1536.png 1536w">
+          <img
+            src="small-320.png" alt=""
+            media="(min-width: 320px)"
+            sizes="100vw"
+            srcset="img/test/small-320.png 320w,
+                    img/test/small-640.png 640w">
+        </picture>
+        <figcaption>Stationery system for the association.</figcaption>
+      </figure>
+
+
         <div class="swiper-container-nvbc">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
+              <figure>
+                <picture>
+                  <source
+
+                    media="(min-width: 1100px)"
+                    sizes="100vw"
+                    srcset="img/test/fullshot-1100.png 1100w,
+                            img/test/fullshot-2200.png 2200w">
+                  <source
+
+                    media="(min-width: 768px)"
+                    sizes="100vw"
+                    srcset="img/test/medium-768.png 768w,
+                            img/test/medium-1536.png 1536w">
+                  <img
+                    src="small-320.png" alt=""
+                    media="(min-width: 320px)"
+                    sizes="100vw"
+                    srcset="img/test/small-320.png 320w,
+                            img/test/small-640.png 640w">
+                </picture>
+                <figcaption>Stationery system for the association.</figcaption>
+              </figure>
+            </div>
+            <div class="swiper-slide">
+              <figure>
+                <picture>
+                  <source
+
+                    media="(min-width: 1100px)"
+                    sizes="100vw"
+                    srcset="img/test/fullshot-1100.png 1100w,
+                            img/test/fullshot-2200.png 2200w">
+                  <source
+
+                    media="(min-width: 768px)"
+                    sizes="100vw"
+                    srcset="img/test/medium-768.png 768w,
+                            img/test/medium-1536.png 1536w">
+                  <img
+                    src="small-320.png" alt=""
+                    media="(min-width: 320px)"
+                    sizes="100vw"
+                    srcset="img/test/small-320.png 320w,
+                            img/test/small-640.png 640w">
+                </picture>
+                <figcaption>Stationery system for the association.</figcaption>
+              </figure>
+            </div>
+            <div class="swiper-slide">
+              <figure>
+                <picture>
+                  <source
+
+                    media="(min-width: 1100px)"
+                    sizes="100vw"
+                    srcset="img/test/fullshot-1100.png 1100w,
+                            img/test/fullshot-2200.png 2200w">
+                  <source
+
+                    media="(min-width: 768px)"
+                    sizes="100vw"
+                    srcset="img/test/medium-768.png 768w,
+                            img/test/medium-1536.png 1536w">
+                  <img
+                    src="small-320.png" alt=""
+                    media="(min-width: 320px)"
+                    sizes="100vw"
+                    srcset="img/test/small-320.png 320w,
+                            img/test/small-640.png 640w">
+                </picture>
+                <figcaption>Stationery system for the association.</figcaption>
+              </figure>
+            </div>
+
+<!--             <div class="swiper-slide">
               <img srcset="img/freelance/nvbc/nvbc_annual_report.png, img/freelance/nvbc/nvbc_annual_report@2x.png 2x" alt="">
             </div>
             <div class="swiper-slide">
@@ -25,107 +127,13 @@
             </div>
             <div class="swiper-slide">
               <img srcset="img/freelance/nvbc/nvbc_award_program.png, img/freelance/nvbc/nvbc_award_program@2x.png 2x" alt="">
-            </div>
+            </div> -->
           </div>
-          <!-- Add Pagination -->
           <div class="pagination-nvbc"></div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="wrap container-fluid">
-    <div class="row stretch">
-      <div class="col3">
-      </div>
 
-      <div class="col6">
-        <h3>New Ventures BC</h3>
-        <p>I have now been doing design work for the annual competitions for New Ventures BC since 2006. Each year I design and execute a distinct visual identity that is used on all of the promational materials for that competition including: postcards, invitations, programs, and award certificates. I also designed the template for the monthly email newsletter which is circulated by Campaign Monitor.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrap container-fluid--image">
-    <div class="row stretch">
-      <!-- Swiper -->
-      <div class="col12">
-        <div class="swiper-container-ac">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img srcset="img/freelance/ac/ac_ar.png, img/freelance/ac/ac_ar@2x.png 2x" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img srcset="img/freelance/ac/ac_ar_inside.png, img/freelance/ac/ac_ar_inside@2x.png 2x" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img srcset="img/freelance/ac/ac_10_oped.png, img/freelance/ac/ac_10_oped@2x.png 2x" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img srcset="img/freelance/ac/ac_email.png, img/freelance/ac/ac_email@2x.png 2x" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img srcset="img/freelance/ac/ac_newsletter.png, img/freelance/ac/ac_newsletter@2x.png 2x" alt="">
-            </div>
-
-          </div>
-          <!-- Add Pagination -->
-          <div class="pagination-ac"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrap container-fluid">
-    <div class="row stretch">
-      <div class="col3"></div>
-      <div class="col6">
-        <h3>Action Canada</h3>
-        <p>I have collaborated with Action Canada since 2008 providing design services to promote the five annual conferences, which promote dialogue between Action Canada and the general public. Promotional materials include invitations, programs, and website graphics. In addition, I design several annual projects including the Action Canada Annual Report.</p>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="wrap container-fluid--image">
-    <div class="row stretch">
-      <!-- Swiper -->
-      <div class="col12">
-        <div class="swiper-container-hpac">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img srcset="img/freelance/hpac/hpac_stationery.png, img/freelance/hpac/hpac_stationery@2x.png 2x" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img srcset="img/freelance/hpac/hpac_newsletter.png, img/freelance/hpac/hpac_newsletter@2x.png 2x" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img srcset="img/freelance/hpac/hpac_calendar.png, img/freelance/hpac/hpac_calendar@2x.png 2x" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img srcset="img/freelance/hpac/hpac_banner.png, img/freelance/hpac/hpac_banner@2x.png 2x" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img srcset="img/freelance/hpac/hpac_awards.png, img/freelance/hpac/hpac_awards@2x.png 2x" alt="">
-            </div>
-          </div>
-          <!-- Add Pagination -->
-          <div class="pagination-hpac"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrap container-fluid">
-    <div class="row stretch">
-      <div class="col3"></div>
-      <div class="col6">
-      <h3>Hang Gliding and Paragliding Association of Canada (HPAC)</h3>
-        <p>My involvement with HPAC started in 2008 with the design of their annual calendar. My role has expanded to include design of current brand materials, and I am currently in the process of redeveloping their website.</p>
-      </div>
-    </div>
-  </div>
 </section>
-
-{% import 'macros/work-macro.nunjucks' as work %}
-{{work.active('freelance')}}
