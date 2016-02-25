@@ -1,12 +1,12 @@
 h1 { 
   color: $white;
-  font-family: "GothamRndSSm-Book", sans-serif;
+  font-family: $font-stack;
   margin: 0 0 1rem;
 }
 
 h2 {
   color: $white;
-  font: bold 3.6rem/1.5em "GothamRndSSm-Book", sans-serif;
+  font: bold 3.6rem/1.5em $font-stack;
   margin: 0;
 
   &.rule {
@@ -33,14 +33,14 @@ h4 {
 
 p {
   color: $white;
-  font: 1.8rem/1.5em "GothamRndSSm-Book", "acumin-pro", sans-serif;
+  font: 1.8rem/1.5em $font-stack;
   font-weight: 100;
   margin: 0 0 1em;
 }
 
 a {
   color: $white;
-  font-family: "GothamRndSSm-Book", "acumin-pro", sans-serif;
+  font-family: $font-stack;
   font-size: 1em;
   text-decoration: underline;
 }
