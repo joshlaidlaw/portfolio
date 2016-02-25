@@ -11,15 +11,18 @@
   </div>
   <div class="wrap container-fluid">
     <div class="row stretch">
-      <figure class="cd-image-container">
-        <img src="img/sfu/sfu_homepage_after.png" alt="SFU's homepage after refactor">
-        <span class="cd-image-label" data-type="original">After</span>
-        <div class="cd-resize-img"> <!-- the resizable image on top -->
-          <img src="img/sfu/sfu_homepage_before.png" alt="SFU's homepage before refactor">
-          <span class="cd-image-label" data-type="modified">Before</span>
-        </div>
-        <span class="cd-handle"></span>
-      </figure> <!-- cd-image-container -->
+      <figure>
+        <div class="cd-image-container">
+          <img src="img/sfu/sfu_homepage_after.png" alt="SFU's homepage after refactor">
+          <span class="cd-image-label" data-type="original">After</span>
+          <div class="cd-resize-img"> <!-- the resizable image on top -->
+            <img src="img/sfu/sfu_homepage_before.png" alt="SFU's homepage before refactor">
+            <span class="cd-image-label" data-type="modified">Before</span>
+          </div>
+          <span class="cd-handle"></span>
+        </div> <!-- cd-image-container -->
+        <figcaption>Before and after of the rewrite of sfu.ca</figcaption>
+      </figure>
     </div>
   </div>
   <div class="wrap container-fluid">
@@ -38,27 +41,30 @@
     <div class="row stretch">
     <div class="col12">
           <!-- Swiper -->
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img srcset="img/sfu/email/alumni_invite@1x.png, img/sfu/email/alumni_invite@2x.png 2x" alt="">
+      <figure>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img srcset="img/sfu/email/alumni_invite@1x.png, img/sfu/email/alumni_invite@2x.png 2x" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img srcset="img/sfu/email/farewell_invite@1x.png, img/sfu/email/farewell_invite@2x.png 2x" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img srcset="img/sfu/email/gen_invite@1x.png, img/sfu/email/gen_invite@2x.png 2x" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img srcset="img/sfu/email/goldcorp@1x.png, img/sfu/email/goldcorp@2x.png 2x" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img srcset="img/sfu/email/psq_invite@1x.png, img/sfu/email/psq_invite@2x.png 2x" alt="">
+            </div>
           </div>
-          <div class="swiper-slide">
-            <img srcset="img/sfu/email/farewell_invite@1x.png, img/sfu/email/farewell_invite@2x.png 2x" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img srcset="img/sfu/email/gen_invite@1x.png, img/sfu/email/gen_invite@2x.png 2x" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img srcset="img/sfu/email/goldcorp@1x.png, img/sfu/email/goldcorp@2x.png 2x" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img srcset="img/sfu/email/psq_invite@1x.png, img/sfu/email/psq_invite@2x.png 2x" alt="">
-          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
         </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-      </div>
+        <figcaption>A small collection of HTML emails designed and coded for SFU</figcaption>
+      </figure>
     </div>
     </div>
   </div>
