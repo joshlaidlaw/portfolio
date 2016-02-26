@@ -6,7 +6,8 @@
       </div>
 
       <div class="col6">
-        <p class="intro">For the past nine years I provided design services for several organizations including design of websites, annual reports, and event invitations.</p>
+        <p class="">For the past nine years I provided design services for several organizations including design of websites, annual reports, and event invitations.</p>
+        <h3>New Ventures BC</h3>
       </div>
     </div>
   </div>
@@ -18,13 +19,22 @@
         <div class="swiper-container-nvbc">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img srcset="img/freelance/nvbc/nvbc_annual_report.png, img/freelance/nvbc/nvbc_annual_report@2x.png 2x" alt="">
+              <figure>
+                <img srcset="img/freelance/nvbc/nvbc_annual_report.png, img/freelance/nvbc/nvbc_annual_report@2x.png 2x" alt="">
+                <figcaption>Inside of annual report fo New Ventures BC</figcaption>
+              </figure>
             </div>
             <div class="swiper-slide">
-              <img srcset="img/freelance/nvbc/nvbc_postcard.png, img/freelance/nvbc/nvbc_postcard@2x.png 2x" alt="">
+              <figure>
+                <img srcset="img/freelance/nvbc/nvbc_postcard.png, img/freelance/nvbc/nvbc_postcard@2x.png 2x" alt="">
+                <figcaption>Postcard used to promote the annual competition</figcaption>
+              </figure>
             </div>
             <div class="swiper-slide">
-              <img srcset="img/freelance/nvbc/nvbc_award_program.png, img/freelance/nvbc/nvbc_award_program@2x.png 2x" alt="">
+              <figure>
+                <img srcset="img/freelance/nvbc/nvbc_award_program.png, img/freelance/nvbc/nvbc_award_program@2x.png 2x" alt="">
+                <figcaption>Program for the award ceremony</figcaption>
+              </figure>
             </div>
           </div>
           <!-- Add Pagination -->
@@ -40,8 +50,8 @@
       </div>
 
       <div class="col6">
-        <h3>New Ventures BC</h3>
         <p>I have now been doing design work for the annual competitions for New Ventures BC since 2006. Each year I design and execute a distinct visual identity that is used on all of the promational materials for that competition including: postcards, invitations, programs, and award certificates. I also designed the template for the monthly email newsletter which is circulated by Campaign Monitor.</p>
+        <h3>Action Canada</h3>
       </div>
     </div>
   </div>
@@ -53,19 +63,34 @@
         <div class="swiper-container-ac">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img srcset="img/freelance/ac/ac_ar.png, img/freelance/ac/ac_ar@2x.png 2x" alt="">
+              <figure>
+                <img srcset="img/freelance/ac/ac_ar.png, img/freelance/ac/ac_ar@2x.png 2x" alt="">
+                <figcaption>Cover of Action Canada's latest annual report</figcaption>
+              </figure>
             </div>
             <div class="swiper-slide">
-              <img srcset="img/freelance/ac/ac_ar_inside.png, img/freelance/ac/ac_ar_inside@2x.png 2x" alt="">
+              <figure>
+                <img srcset="img/freelance/ac/ac_ar_inside.png, img/freelance/ac/ac_ar_inside@2x.png 2x" alt="">
+                <figcaption>Inside spread of the annual report</figcaption>
+              </figure>
             </div>
             <div class="swiper-slide">
-              <img srcset="img/freelance/ac/ac_10_oped.png, img/freelance/ac/ac_10_oped@2x.png 2x" alt="">
+              <figure>
+                <img srcset="img/freelance/ac/ac_10_oped.png, img/freelance/ac/ac_10_oped@2x.png 2x" alt="">
+                <figcaption>Cover and inside of 10th anniversary op-ed booklet</figcaption>
+              </figure>
             </div>
             <div class="swiper-slide">
-              <img srcset="img/freelance/ac/ac_email.png, img/freelance/ac/ac_email@2x.png 2x" alt="">
+              <figure>
+                <img srcset="img/freelance/ac/ac_email.png, img/freelance/ac/ac_email@2x.png 2x" alt="">
+                <figcaption>HTML emails</figcaption>
+              </figure>
             </div>
             <div class="swiper-slide">
-              <img srcset="img/freelance/ac/ac_newsletter.png, img/freelance/ac/ac_newsletter@2x.png 2x" alt="">
+              <figure>
+                <img srcset="img/freelance/ac/ac_newsletter.png, img/freelance/ac/ac_newsletter@2x.png 2x" alt="">
+                <figcaption>Cover and inside spread of fellow spotlight</figcaption>
+              </figure>
             </div>
 
           </div>
@@ -80,8 +105,8 @@
     <div class="row stretch">
       <div class="col3"></div>
       <div class="col6">
-        <h3>Action Canada</h3>
         <p>I have collaborated with Action Canada since 2008 providing design services to promote the five annual conferences, which promote dialogue between Action Canada and the general public. Promotional materials include invitations, programs, and website graphics. In addition, I design several annual projects including the Action Canada Annual Report.</p>
+        <h3>Hang Gliding and Paragliding Association of Canada (HPAC)</h3>
       </div>
     </div>
   </div>
@@ -94,19 +119,34 @@
         <div class="swiper-container-hpac">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img srcset="img/freelance/hpac/hpac_stationery.png, img/freelance/hpac/hpac_stationery@2x.png 2x" alt="">
+              <figure>
+                <img srcset="img/freelance/hpac/hpac_stationery.png, img/freelance/hpac/hpac_stationery@2x.png 2x" alt="">
+                <figcaption>Stationery system for the association</figcaption>
+              </figure>
             </div>
             <div class="swiper-slide">
-              <img srcset="img/freelance/hpac/hpac_newsletter.png, img/freelance/hpac/hpac_newsletter@2x.png 2x" alt="">
+              <figure>
+                <img srcset="img/freelance/hpac/hpac_newsletter.png, img/freelance/hpac/hpac_newsletter@2x.png 2x" alt="">
+                <figcaption>Quarterly HTML newsletters sent to members</figcaption>
+              </figure>
             </div>
             <div class="swiper-slide">
-              <img srcset="img/freelance/hpac/hpac_calendar.png, img/freelance/hpac/hpac_calendar@2x.png 2x" alt="">
+              <figure>
+                <img srcset="img/freelance/hpac/hpac_calendar.png, img/freelance/hpac/hpac_calendar@2x.png 2x" alt="">
+                <figcaption>Annual calendar</figcaption>
+              </figure>
             </div>
             <div class="swiper-slide">
-              <img srcset="img/freelance/hpac/hpac_banner.png, img/freelance/hpac/hpac_banner@2x.png 2x" alt="">
+              <figure>
+                <img srcset="img/freelance/hpac/hpac_banner.png, img/freelance/hpac/hpac_banner@2x.png 2x" alt="">
+                <figcaption>Banner used during competitions</figcaption>
+              </figure>
             </div>
             <div class="swiper-slide">
-              <img srcset="img/freelance/hpac/hpac_awards.png, img/freelance/hpac/hpac_awards@2x.png 2x" alt="">
+              <figure>
+                <img srcset="img/freelance/hpac/hpac_awards.png, img/freelance/hpac/hpac_awards@2x.png 2x" alt="">
+                <figcaption>Award certificates given out by HPAC</figcaption>
+              </figure>
             </div>
           </div>
           <!-- Add Pagination -->
@@ -120,7 +160,7 @@
     <div class="row stretch">
       <div class="col3"></div>
       <div class="col6">
-      <h3>Hang Gliding and Paragliding Association of Canada (HPAC)</h3>
+      
         <p>My involvement with HPAC started in 2008 with the design of their annual calendar. My role has expanded to include design of current brand materials, and I am currently in the process of redeveloping their website.</p>
       </div>
     </div>
