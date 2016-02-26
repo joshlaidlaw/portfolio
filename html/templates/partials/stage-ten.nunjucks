@@ -13,7 +13,10 @@
   </div>
   <div class="wrap container-fluid">
     <div class="row stretch">
-      <img class="l-pad-bottom" src="img/s10/s10_tj.png" alt="Stage TEN's cloub-based control room">
+      <figure>
+        <img class="" src="img/s10/s10_tj.png" alt="Stage TEN's cloub-based control room">
+        <figcaption>The cloud-based control room developed by Stage TEN</figcaption>
+      </figure>
     </div>
   </div>
   <div class="wrap container-fluid">
@@ -21,22 +24,28 @@
       <div class="col3">
       </div>
       <div class="col6">
-        <p>We initially patched together a working interface that allowed us to preview four video streams at once and combine them into a composite video. We called this interface the TJ. However, with time we appreciated that the TJ interface was limited in that it could not easily accomodate more than four video streams at a time. To accomodate more than four streams, I started to wireframe other possibilities, which led to the concept of “shots.” A shot is made up of multiple video sources and allows for different people to be used in each shot. We decided to limit the number of shots to four to minimize the user’s cognitive load.</p>
+        <p>We initially patched together a working interface that allowed us to preview four video streams at once and combine them into a composite video. This was the first version of our cloud-based control room. However, with time we appreciated that the interface was limited in that it could not easily accomodate more than four video streams at a time. To accomodate more than four streams, I started to wireframe other possibilities, which led to the concept of “shots.” A shot is made up of multiple video sources and allows for different people to be used in each shot. We decided to limit the number of shots to four to minimize the user’s cognitive load.</p>
 
-        <p>Once the TJ was capable of accommodating multiple shots simultaneously, we began work on our mobile client, which is a key component of the system. The mobile client allowed participants to contribute content without being tied to a computer, and facilitated crowd sourced event coverage. The mobile client also allowed for the consumption of live video content remotely.</p>
+        <p>Once the cloud-based control room was capable of accommodating multiple shots simultaneously, we began work on our mobile client, which is a key component of the system. The mobile client allowed participants to contribute content without being tied to a computer, and facilitated crowd sourced event coverage. The mobile client also allowed for the consumption of live video content remotely.</p>
+        
+        <figure>
+          <img srcset="img/s10/s10_mobile_client.png, img/s10/s10_mobile_client.png" alt="Mock-up of the mobile clients camera view">
+          <figcaption>Mock-up of the mobile clients camera view</figcaption>
+        </figure>
 
-        <img srcset="img/s10/s10_mobile_client.png, img/s10/s10_mobile_client.png" alt="">
+        <p>With the mobile client in a pre-beta stage, we started to allow outside users to utilize the product. The first wave of beta testers came from television production backgrounds. Testing revealed further unmet needs — that the product did not allow for quick switching between multiple users in a single shot, which is what would normally occur on TV. Also, the cloud-based control room was too complex for a single person to orchestrate. At this point I started to re-evaluate the inteface resulting in the concept of segment.</p>
 
-        <p>With the mobile client in a pre-beta stage, we started to allow outside users to utilize the product. The first wave of beta testers came from television production backgrounds. Testing revealed further unmet needs — that the product did not allow for quick switching between multiple users in a single shot, which is what would normally occur on TV. Also, the TJ was too complex for a single person to orchestrate. At this point I started to re-evaluate the inteface resulting in the concept of segment.</p>
-
-        <p>With the mobile client in a pre-beta stage, we started to allow outside users to utilize the product. The first wave of beta testers came from television production backgrounds. Testing revealed further unmet needs — that the product did not allow for quick switching between multiple users in a single shot, which is what would normally occur on TV. Also, the TJ was too complex for a single person to orchestrate. At this point I started to re-evaluate the inteface resulting in the concept of segment.</p>
+        <p>With the mobile client in a pre-beta stage, we started to allow outside users to utilize the product. The first wave of beta testers came from television production backgrounds. Testing revealed further unmet needs — that the product did not allow for quick switching between multiple users in a single shot, which is what would normally occur on TV. Also, the cloud-based control room was too complex for a single person to orchestrate. At this point I started to re-evaluate the inteface resulting in the concept of segment.</p>
       </div>
     </div>
     </div>
   </div>
   <div class="wrap container-fluid">
     <div class="row stretch">
-      <img class="l-pad-bottom" src="img/s10/Creator_UI_v2_framed.png" alt="Stage TEN's planned revised cloub-based control room">
+      <figure>
+        <img src="img/s10/Creator_UI_v2_framed.png" alt="Stage TEN's planned revised cloub-based control room">
+        <figcaption>Stage TEN's planned revised cloub-based control room</figcaption>
+      </figure>
     </div>
   </div>
   <div class="wrap container-fluid">
@@ -56,18 +65,22 @@
     <div class="row stretch">
       <div class="col12">
         <!-- Swiper -->
-        <div class="swiper-container-web">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img srcset="img/s10/s10_marketing_v2.png, img/s10/s10_marketing_v2@2x.png 2x" alt="">
+        <figure>
+          <div class="swiper-container-web">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img srcset="img/s10/s10_marketing_v2.png, img/s10/s10_marketing_v2@2x.png 2x" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img srcset="img/s10/s10_marketing_v1.png, img/s10/s10_marketing_v1@2x.png 2x" alt="">
+              </div>
             </div>
-            <div class="swiper-slide">
-              <img srcset="img/s10/s10_marketing_v1.png, img/s10/s10_marketing_v1@2x.png 2x" alt="">
-            </div>
+            <!-- Add Pagination -->
+            <div class="pagination-web"></div>
           </div>
-          <!-- Add Pagination -->
-          <div class="pagination-web"></div>
-        </div>
+          <figcaption>Marketing websites developed to showcase the product</figcaption>
+        </figure>
+        
 
       </div>
       
