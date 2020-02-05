@@ -1,6 +1,6 @@
 // Third-party
 @import '../bower_components/susy/sass/susy';
-@import '../bower_components/normalize-scss/normalize';
+@import '../bower_components/normalize-scss/_normalize.scss';
 @import '../bower_components/breakpoint-sass/stylesheets/breakpoint';
 @import '../bower_components/Swiper/dist/css/swiper';
 
@@ -22,4 +22,3 @@
 @import 'layout/about';
 @import 'layout/work';
 @import 'layout/footer';
-
