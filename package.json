@@ -40,6 +40,6 @@
     "wiredep": "~4.0.0"
   },
   "dependencies": {
-    "imagemin-pngquant": "~8.0.0"
+    "imagemin-pngquant": "~9.0.0"
   }
 }
