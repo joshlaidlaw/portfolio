@@ -10,7 +10,7 @@
   "license": "BSD-2-Clause",
   "devDependencies": {
     "bower": "^1.8.8",
-    "browser-sync": "^2.26.12",
+    "browser-sync": "^2.26.13",
     "critical": "^2.0.5",
     "del": "~6.0.0",
     "gulp": "~3.9.1",
