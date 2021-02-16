@@ -35,7 +35,7 @@
     "jshint-stylish": "~2.2.1",
     "main-bower-files": "^2.13.3",
     "node-sass": "^5.0.0",
-    "nunjucks": "^3.2.2",
+    "nunjucks": "^3.2.3",
     "opn": "~6.0.0",
     "wiredep": "~4.0.0"
   },
