@@ -9,7 +9,7 @@
   "author": "josh.laidlaw@gmail.com",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "bower": "^1.8.12",
+    "bower": "^1.8.13",
     "browser-sync": "^2.27.5",
     "critical": "^4.0.1",
     "del": "~6.0.0",
