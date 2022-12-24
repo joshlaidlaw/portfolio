@@ -1,16 +1,3 @@
-// Josh Testing
-// var videoPreview = document.getElementsByClassName("mobile-video");
-// var video = document.getElementById('media-video');
-
-// video.addEventListener("mouseenter", function( event ) {   
-//     // highlight the mouseenter target
-//     video.play();
-//   }, false);
-
-// video.addEventListener("mouseout", function(event) {
-//   video.pause();
-// }, false);
-
 jQuery(document).ready(function($){
 
   var swiper = new Swiper('.swiper-container', {
@@ -66,14 +53,14 @@ jQuery(document).ready(function($){
     spaceBetween: 30,
     slidesPerView: 1
   });
-  
-  //check if the .cd-image-container is in the viewport 
+
+  //check if the .cd-image-container is in the viewport
   //if yes, animate it
   checkPosition($('.cd-image-container'));
   $(window).on('scroll', function(){
       checkPosition($('.cd-image-container'));
   });
-  
+
   //make the .cd-handle element draggable and modify .cd-resize-img width according to its position
   $('.cd-image-container').each(function(){
       var actual = $(this);
@@ -111,10 +98,10 @@ function drags(dragElement, resizeElement, container, labelContainer, labelResiz
             containerWidth = container.outerWidth(),
             minLeft = containerOffset + 10,
             maxLeft = containerOffset + containerWidth - dragWidth - 10;
-        
+
         dragElement.parents().on("mousemove vmousemove", function(e) {
             leftValue = e.pageX + xPosition - dragWidth;
-            
+
             //constrain the draggable element to move inside his container
             if(leftValue < minLeft ) {
                 leftValue = minLeft;
@@ -123,17 +110,17 @@ function drags(dragElement, resizeElement, container, labelContainer, labelResiz
             }
 
             widthValue = (leftValue + dragWidth/2 - containerOffset)*100/containerWidth+'%';
-            
+
             $('.draggable').css('left', widthValue).on("mouseup vmouseup", function() {
                 $(this).removeClass('draggable');
                 resizeElement.removeClass('resizable');
             });
 
-            $('.resizable').css('width', widthValue); 
+            $('.resizable').css('width', widthValue);
 
             updateLabel(labelResizeElement, resizeElement, 'left');
             updateLabel(labelContainer, resizeElement, 'right');
-            
+
         }).on("mouseup vmouseup", function(e){
             dragElement.removeClass('draggable');
             resizeElement.removeClass('resizable');
