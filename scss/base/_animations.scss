@@ -1,27 +1,29 @@
+@use "../helpers/variables";
+
 @keyframes shift-bg-colour {
   0% {
-    background-color: $brand-primary;
+    background-color: variables.$brand-primary;
   }
 
   50% {
-    background-color: $brand-secondary;
+    background-color: variables.$brand-secondary;
   }
 
   100% {
-    background-color: $brand-primary;
+    background-color: variables.$brand-primary;
   }
 }
 
 @keyframes shift-colour {
   0% {
-    color: $brand-primary;
+    color: variables.$brand-primary;
   }
 
   50% {
-    color: $brand-secondary;
+    color: variables.$brand-secondary;
   }
 
   100% {
-    color: $brand-primary;
+    color: variables.$brand-primary;
   }
 }

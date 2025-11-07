@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "../helpers/variables";
+
 nav {
   float: left;
 
@@ -15,7 +18,7 @@ nav {
 
     a {
       &.current {
-        border-bottom-color: lighten($brand-primary, 10%);
+        border-bottom-color: color.adjust(variables.$brand-primary, $lightness: 10%);
         cursor: not-allowed;
       }
     }
@@ -30,14 +33,14 @@ nav {
 
       &:hover {
         svg {
-          fill: $brand-primary;
+          fill: variables.$brand-primary;
         }
       }
     }
 
     a {
-      border-bottom: 2px solid $white;
-      color: $brand-primary;
+      border-bottom: 2px solid variables.$white;
+      color: variables.$brand-primary;
       display: block;
       float: left;
       font-size: 1.5rem;
@@ -47,7 +50,7 @@ nav {
       width: auto;
 
       &:hover {
-        border-bottom-color: rgba($brand-primary, .5);
+        border-bottom-color: rgba(variables.$brand-primary, .5);
         text-decoration: none;
       }
     }

@@ -1,24 +1,22 @@
-// Third-party
-@import '../bower_components/susy/sass/susy';
-@import '../bower_components/normalize-scss/_normalize.scss';
-@import '../bower_components/breakpoint-sass/stylesheets/breakpoint';
-@import '../bower_components/Swiper/dist/css/swiper';
+// Third-party - CSS imports (Vite will handle these)
+@import 'swiper/swiper-bundle.css';
+@import 'modern-normalize/modern-normalize.css';
 
-@import 'helpers/variables';
-@import 'helpers/clearfix';
-@import 'helpers/grid';
-@import 'helpers/spacers';
+@use 'helpers/variables';
+@use 'helpers/clearfix';
+@use 'helpers/grid';
+@use 'helpers/spacers';
 
-@import 'base/base';
-@import 'base/animations';
-@import 'base/typography';
+@use 'base/base';
+@use 'base/animations';
+@use 'base/typography';
 
-@import 'components/nav';
-@import 'components/buttons';
-@import 'components/compare';
+@use 'components/nav';
+@use 'components/buttons';
+@use 'components/compare';
 
 
-@import 'layout/header';
-@import 'layout/about';
-@import 'layout/work';
-@import 'layout/footer';
+@use 'layout/header';
+@use 'layout/about';
+@use 'layout/work';
+@use 'layout/footer';

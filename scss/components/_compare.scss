@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "../helpers/variables";
+
 .cd-image-container {
   margin: 0 auto 1.8rem;
   max-width: 1100px;
@@ -13,7 +16,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  color: $white;
+  color: variables.$white;
   padding: 1em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -106,14 +109,14 @@
   margin-top: -22px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0) url("../img/cd-arrows.svg") no-repeat center center;
-  border: 2px solid $white;
+  border: 2px solid variables.$white;
   cursor: move;
   opacity: 0;
   transform: translate3d(0, 0, 0) scale(0);
 }
 .cd-handle.draggable {
   /* change background color when element is active */
-  background-color: opacify($white, .8);
+  background-color: color.adjust(variables.$white, $alpha: .8);
 }
 .is-visible .cd-handle {
   opacity: 1;

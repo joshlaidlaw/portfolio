@@ -1,8 +1,9 @@
+@use "../helpers/variables";
+
 .about {
-  @include clearfix;
   align-items: flex-start;
-  background-color: $brand-primary;
-  color: $white;
+  background-color: variables.$brand-primary;
+  color: variables.$white;
   display: flex;
   flex-direction: row;
   flex-flow: flex-start;
@@ -20,8 +21,8 @@
     margin: 0 0 1em;
 
     &.intro {
-      color: $white;
-      font: 3.6rem/1em $font-stack;
+      color: variables.$white;
+      font: 3.6rem/1em variables.$font-stack;
       font-weight: 100;
       margin: 0;
     }

@@ -11,29 +11,8 @@ $grid-half: $grid-columns/2;
 $grid-third: $grid-columns/3;
 $grid-quarter: $grid-columns/4;
 
-$base-layout: (
-  container: auto,
-  columns: 4,
-  gutters: .25,
-  gutter-position: inside,
-  math: fluid,
-  output: isolate,
-);
-
-$small-layout: (
-  container: auto,
-  columns: 4,
-  gutters: .25,
-  gutter-position: inside,
-  math: fluid,
-  output: isolate,
-);
-
-//Container
-$container-small: layout(auto $grid-third .25 inside fluid isolate);
-$container-medium: layout($medium $grid-half .25 after fluid isolate);
-$container-large: layout($large $grid-columns .25 after fluid isolate);
-$container-xlarge: layout($xlarge $grid-columns .25 after fluid isolate);
+// Container widths (will be replaced with CSS Grid)
+$container-max-width: 1200px;
 
 
 //Colours
