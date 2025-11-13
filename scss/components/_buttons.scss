@@ -1,10 +1,12 @@
+@use "../helpers/variables";
+
 .btn,
 button {
   background: transparent;
-  border: 2px solid $white;
+  border: 2px solid variables.$white;
   border-radius: 3px;
   box-sizing: border-box;
-  color: $white;
+  color: variables.$white;
   font-size: 1.2rem;
   font-weight: bold;
   margin: 0 0 1.5rem;
@@ -15,8 +17,8 @@ button {
   transition: all 240ms ease;
 
   &:hover {
-    background: $white;
-    border-color: $white;
-    color: $brand-primary;
+    background: variables.$white;
+    border-color: variables.$white;
+    color: variables.$brand-primary;
   }
 }

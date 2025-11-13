@@ -1,8 +1,10 @@
+@use "sass:color";
+@use "../helpers/variables";
+
 .work {
-  @include clearfix;
   align-items: flex-start;
   box-sizing: border-box;
-  color: $black;
+  color: variables.$black;
   display: flex;
   flex: 0 1 auto;
   flex-direction: row;
@@ -26,8 +28,8 @@
     margin: 0 0 1em;
 
     &.intro {
-      color: $white;
-      font: 3.6rem/1em $font-stack;
+      color: variables.$white;
+      font: 3.6rem/1em variables.$font-stack;
       font-weight: 100;
       margin-bottom: 3.6rem;
     }
@@ -42,7 +44,7 @@
 }
 
 .stage10 {
-  background-color: $stage10;
+  background-color: variables.$stage10;
 
   .pagination-web {
     text-align: center;
@@ -52,46 +54,46 @@
   }
 
   .swiper-pagination-bullet {
-    background: darken($stage10, 50%);
+    background: color.adjust(variables.$stage10, $lightness: -50%);
     border: 0;
     transition: all 240ms linear;
   }
 
   .swiper-pagination-bullet-active {
-    background: $white;
+    background: variables.$white;
     opacity: 1;
   }
 
   .cd-handle.draggable {
     /* change background color when element is active */
-    background-color: $stage10;
+    background-color: variables.$stage10;
 
   }
 }
 
 .sfu {
-  background-color: $sfu;
+  background-color: variables.$sfu;
 
   .swiper-pagination-bullet {
-    background: darken($sfu, 50%);
+    background: color.adjust(variables.$sfu, $lightness: -50%);
     border: 0;
     transition: all 240ms linear;
   }
 
   .swiper-pagination-bullet-active {
-    background: $white;
+    background: variables.$white;
     opacity: 1;
   }
 
   .cd-handle.draggable {
     /* change background color when element is active */
-    background-color: $sfu;
+    background-color: variables.$sfu;
 
   }
 }
 
 .freelance {
-  background-color: $freelance;
+  background-color: variables.$freelance;
 
   .pagination-nvbc,
   .pagination-ac,
@@ -103,13 +105,13 @@
   }
 
   .swiper-pagination-bullet {
-    background: darken($freelance, 50%);
+    background: color.adjust(variables.$freelance, $lightness: -50%);
     border: 0;
     transition: all 240ms linear;
   }
 
   .swiper-pagination-bullet-active {
-    background: $white;
+    background: variables.$white;
     opacity: 1;
   }
 }

@@ -1,12 +1,14 @@
+@use "../helpers/variables";
+
 h1 { 
-  color: $white;
-  font-family: $font-stack;
+  color: variables.$white;
+  font-family: variables.$font-stack;
   margin: 0 0 1rem;
 }
 
 h2 {
-  color: $white;
-  font: bold 3.6rem/1.5em $font-stack;
+  color: variables.$white;
+  font: bold 3.6rem/1.5em variables.$font-stack;
   margin: 0;
 
   &.rule {
@@ -16,7 +18,7 @@ h2 {
 }
 
 h3 {
-  color: $white;
+  color: variables.$white;
   font-size: 3rem;
   font-weight: normal;
   line-height: 1.25em;
@@ -24,7 +26,7 @@ h3 {
 }
 
 h4 {
-  color: rgba($white, .25);
+  color: rgba(variables.$white, .25);
   font-size: 1.2rem;
   line-height: 1.25em;
   font-weight: bold;
@@ -32,21 +34,21 @@ h4 {
 }
 
 p {
-  color: $white;
-  font: 1.8rem/1.5em $font-stack;
+  color: variables.$white;
+  font: 1.8rem/1.5em variables.$font-stack;
   font-weight: 100;
   margin: 0 0 1em;
 }
 
 a {
-  color: $white;
-  font-family: $font-stack;
+  color: variables.$white;
+  font-family: variables.$font-stack;
   font-size: 1em;
   text-decoration: underline;
 }
 
 figcaption {
-  color: $white;
+  color: variables.$white;
   font-size: 1.2em;
   text-align: center;
 }

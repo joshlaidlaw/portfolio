@@ -1,17 +1,17 @@
+@use "../helpers/variables";
+
 header {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: variables.$brand-primary;
 }
 
 .logo {
   display: block;
 
   svg {
-    fill: $brand-primary;
-    float: left;
-    height: 3rem;
-    margin-right: 1rem;
-    transition: all .5s ease;
-    width: auto;
+    fill: variables.$brand-primary;
   }
 
   h1 {
@@ -20,7 +20,7 @@ header {
     margin: 0;
 
     a {
-      color: $brand-primary;
+      color: variables.$brand-primary;
       font-weight: normal;
       text-decoration: none;
     }

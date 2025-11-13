@@ -1,7 +1,9 @@
+@use "../helpers/variables";
+
 html {
   background-size: cover;
   box-sizing: border-box;
-  font-family: $font-stack;
+  font-family: variables.$font-stack;
   font-size: 62.5%;
 }
 
@@ -12,7 +14,7 @@ html {
 }
 
 body {
-  background-color: $white;
+  background-color: variables.$white;
   height: 100vh;
 }
 

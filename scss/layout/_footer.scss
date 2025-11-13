@@ -1,9 +1,10 @@
+@use "../helpers/variables";
+
 .contact {
-  @include clearfix;
   align-items: flex-start;
-  background-color: $grey;
-  box-shadow: inset 0 5px 0 $brand-primary;
-  color: $white;
+  background-color: variables.$grey;
+  box-shadow: inset 0 5px 0 variables.$brand-primary;
+  color: variables.$white;
   display: flex;
   flex-direction: row;
   flex-flow: flex-start;
@@ -11,26 +12,26 @@
   width: 100%;
 
   h2 {
-    color: $black;
+    color: variables.$black;
     font-weight: bold;
   }
 
   p {
-    color: $black;
+    color: variables.$black;
     font-size: 3.6rem;
     font-weight: 100;
   }
 
   a {
-    border-bottom: 2px solid $white;
-    color: $brand-primary;
+    border-bottom: 2px solid variables.$white;
+    color: variables.$brand-primary;
     font-weight: normal;
     text-decoration: none;
     text-transform: none;
     transition: border-bottom-color 240ms linear;
 
     &:hover {
-      border-bottom-color: $brand-primary;
+      border-bottom-color: variables.$brand-primary;
     }
   }
 }

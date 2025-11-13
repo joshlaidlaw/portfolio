@@ -1,1 +1,17 @@
-function checkPosition(e){e.each(function(){var e=$(this);$(window).scrollTop()+.5*$(window).height()>e.offset().top&&e.addClass("is-visible")})}function drags(l,d,r,c,p){l.on("mousedown vmousedown",function(e){l.addClass("draggable"),d.addClass("resizable");var i=l.outerWidth(),a=l.offset().left+i-e.pageX,n=r.offset().left,t=r.outerWidth(),s=n+10,o=n+t-i-10;l.parents().on("mousemove vmousemove",function(e){leftValue=e.pageX+a-i,leftValue<s?leftValue=s:leftValue>o&&(leftValue=o),widthValue=100*(leftValue+i/2-n)/t+"%",$(".draggable").css("left",widthValue).on("mouseup vmouseup",function(){$(this).removeClass("draggable"),d.removeClass("resizable")}),$(".resizable").css("width",widthValue),updateLabel(p,d,"left"),updateLabel(c,d,"right")}).on("mouseup vmouseup",function(){l.removeClass("draggable"),d.removeClass("resizable")}),e.preventDefault()}).on("mouseup vmouseup",function(){l.removeClass("draggable"),d.removeClass("resizable")})}function updateLabel(e,i,a){"left"==a?e.offset().left+e.outerWidth()<i.offset().left+i.outerWidth()?e.removeClass("is-hidden"):e.addClass("is-hidden"):e.offset().left>i.offset().left+i.outerWidth()?e.removeClass("is-hidden"):e.addClass("is-hidden")}jQuery(document).ready(function(i){new Swiper(".swiper-container",{pagination:".swiper-pagination",paginationClickable:!0,slidesPerView:3,spaceBetween:30,breakpoints:{1100:{slidesPerView:3,spaceBetween:30},768:{slidesPerView:2,spaceBetween:30},640:{slidesPerView:2,spaceBetween:30},320:{slidesPerView:2,spaceBetween:15}}}),new Swiper(".swiper-container-web",{pagination:".pagination-web",paginationClickable:!0,spaceBetween:30,preloadImages:!0,lazyLoading:!0}),new Swiper(".swiper-container-nvbc",{pagination:".pagination-nvbc",paginationClickable:!0,spaceBetween:30,slidesPerView:1}),new Swiper(".swiper-container-ac",{pagination:".pagination-ac",paginationClickable:!0,spaceBetween:30,slidesPerView:1}),new Swiper(".swiper-container-hpac",{pagination:".pagination-hpac",paginationClickable:!0,spaceBetween:30,slidesPerView:1}),checkPosition(i(".cd-image-container")),i(window).on("scroll",function(){checkPosition(i(".cd-image-container"))}),i(".cd-image-container").each(function(){var e=i(this);drags(e.find(".cd-handle"),e.find(".cd-resize-img"),e,e.find('.cd-image-label[data-type="original"]'),e.find('.cd-image-label[data-type="modified"]'))}),i(window).on("resize",function(){i(".cd-image-container").each(function(){var e=i(this);updateLabel(e.find('.cd-image-label[data-type="modified"]'),e.find(".cd-resize-img"),"left"),updateLabel(e.find('.cd-image-label[data-type="original"]'),e.find(".cd-resize-img"),"right")})})});
+// Main entry point for portfolio site
+import { initSwipers } from './swiper-init.js';
+import { initImageCompare } from './image-compare.js';
+
+// Initialize all functionality when DOM is ready
+function init() {
+  initSwipers();
+  initImageCompare();
+}
+
+// Wait for DOM to be ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  // DOM is already ready
+  init();
+}
