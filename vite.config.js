@@ -50,14 +50,6 @@ export default defineConfig({
         return null;
       },
     },
-    viteStaticCopy({
-      targets: [
-        {
-          src: 'fonts/*',
-          dest: 'fonts',
-        },
-      ],
-    }),
     // Bundle analysis (only in analyze mode)
     process.env.ANALYZE === 'true' &&
       visualizer({
@@ -68,8 +60,8 @@ export default defineConfig({
       }),
   ].filter(Boolean),
   build: {
-    outDir: '../dist',
-    emptyOutDir: false,
+    outDir: './dist',
+    emptyOutDir: true,
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'dist/index.html'),
@@ -88,9 +80,6 @@ export default defineConfig({
           const ext = info[info.length - 1];
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
             return `img/[name]-[hash][extname]`;
-          }
-          if (/woff2?|eot|ttf|otf/i.test(ext)) {
-            return `fonts/[name]-[hash][extname]`;
           }
           return `assets/[name]-[hash][extname]`;
         },
