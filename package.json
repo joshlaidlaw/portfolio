@@ -19,7 +19,7 @@
   "author": "josh.laidlaw@gmail.com",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "autoprefixer": "^10.4.22",
+    "autoprefixer": "^10.4.23",
     "critical": "^7.2.1",
     "eslint": "^9.39.1",
     "modern-normalize": "^3.0.1",
