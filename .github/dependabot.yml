@@ -3,6 +3,13 @@ updates:
 - package-ecosystem: npm
   directory: "/"
   schedule:
-    interval: daily
+    interval: weekly
     time: "13:00"
   open-pull-requests-limit: 10
+  cooldown:
+    default-days: 7
+  groups:
+    production-dependencies:
+      dependency-type: "production"
+    development-dependencies:
+      dependency-type: "development"
