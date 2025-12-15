@@ -21,7 +21,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.23",
     "critical": "^7.2.1",
-    "eslint": "^9.39.1",
+    "eslint": "^9.39.2",
     "modern-normalize": "^3.0.1",
     "nunjucks": "^3.2.4",
     "postcss": "^8.4.47",
