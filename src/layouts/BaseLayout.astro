@@ -1,0 +1,33 @@
+---
+import Footer from '../components/Footer.astro';
+import { defaultDescription, defaultTitle } from '../data/site';
+import '../styles/main.scss';
+import mainScriptUrl from '../scripts/main.ts?url';
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const { title = defaultTitle, description = defaultDescription } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+  </head>
+  <body>
+    <slot />
+    <Footer />
+    <script type="module" src={mainScriptUrl} is:inline></script>
+  </body>
+</html>

@@ -1,5 +1,7 @@
 bower_components
 node_modules
 .DS_Store
-dist/img/videos
 dist/
+.astro/
+playwright-report/
+test-results/
