@@ -33,6 +33,6 @@
     "vite-plugin-static-copy": "^3.3.0"
   },
   "dependencies": {
-    "swiper": "^12.1.2"
+    "swiper": "^12.1.3"
   }
 }
