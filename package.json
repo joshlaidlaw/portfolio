@@ -29,7 +29,7 @@
     "rollup-plugin-visualizer": "^7.0.1",
     "sass": "^1.98.0",
     "terser": "^5.46.1",
-    "vite": "^8.0.2",
+    "vite": "^8.0.8",
     "vite-plugin-static-copy": "^4.0.0"
   },
   "dependencies": {
