@@ -25,12 +25,12 @@
     "modern-normalize": "^3.0.1",
     "nunjucks": "^3.2.4",
     "postcss": "^8.5.15",
-    "prettier": "^3.8.3",
+    "prettier": "^3.8.4",
     "rollup-plugin-visualizer": "^7.0.1",
     "sass": "^1.100.0",
     "terser": "^5.48.0",
     "vite": "^8.0.16",
-    "vite-plugin-static-copy": "^4.1.0"
+    "vite-plugin-static-copy": "^4.1.1"
   },
   "dependencies": {
     "swiper": "^12.2.0"
