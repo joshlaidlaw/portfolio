@@ -1,0 +1,38 @@
+---
+import { caseStudies } from '../data/site';
+
+type Props = {
+  exclude?: Array<(typeof caseStudies)[number]['slug']>;
+};
+
+const { exclude = [] } = Astro.props;
+const items = caseStudies.filter((study) => !exclude.includes(study.slug));
+---
+
+<section class="work">
+  <div class="wrap container-fluid">
+    <div class="row stretch case-study-grid">
+      {items.map((study) => (
+        <div
+          class:list={[
+            'box',
+            'case-study',
+            study.slug === 'freelance' ? 'case-study--full' : 'case-study--half',
+            study.slug === 'stage-ten' ? 'stage10' : study.slug,
+          ]}
+        >
+          <h3>
+            <a href={study.href}>{study.title}</a>
+          </h3>
+          <p>{study.summary}</p>
+          <picture>
+            {study.sources.map((source) => (
+              <source srcset={source.srcset} media={source.media} />
+            ))}
+            <img srcset={study.imgSrcset} alt={study.imageAlt} />
+          </picture>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

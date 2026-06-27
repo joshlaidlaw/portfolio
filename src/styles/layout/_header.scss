@@ -1,0 +1,47 @@
+@use "../helpers/variables";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: variables.$brand-primary;
+}
+
+nav {
+  width: 100%;
+  margin: 1rem 0;
+  
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.logo {
+  display: block;
+  width: 4rem;
+  
+  a {
+    width: 100%;
+  }
+
+  svg {
+    fill: variables.$brand-primary;
+  }
+
+  h1 {
+    float: left;
+    font-size: 2rem;
+    margin: 0;
+
+    a {
+      color: variables.$brand-primary;
+      font-weight: normal;
+      text-decoration: none;
+    }
+  }
+}

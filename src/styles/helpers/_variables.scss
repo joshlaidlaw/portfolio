@@ -1,0 +1,33 @@
+@use "sass:math";
+
+//Breakpoints
+$xsmall: 320px;
+$small: 768px;
+$medium: 920px;
+$large:	1100px;
+$xlarge: $large;
+
+//Grid Setting
+$grid-columns: 12;
+$grid-half: math.div($grid-columns, 2);
+$grid-third: math.div($grid-columns, 3);
+$grid-quarter: math.div($grid-columns, 4);
+
+// Container widths (will be replaced with CSS Grid)
+$container-max-width: 1200px;
+
+
+//Colours
+$black: #000;
+$white: #fff;
+$brand-primary: #0081cb;
+$brand-secondary: #4e008b;
+$grey: #dad8d6;
+
+$stage10: #ff5000;
+$sfu: #f6323e;
+$freelance: #00a887;
+
+//Fonts
+
+$font-stack: "GothamRndSSm-Book", sans-serif;
