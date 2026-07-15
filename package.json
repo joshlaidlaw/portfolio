@@ -24,10 +24,10 @@
     "@astrojs/check": "^0.9.9",
     "@eslint/js": "^10.0.0",
     "@playwright/test": "^1.54.2",
-    "@types/node": "^26.1.0",
-    "@typescript-eslint/eslint-plugin": "^8.62.1",
-    "@typescript-eslint/parser": "^8.62.1",
-    "astro": "^7.0.4",
+    "@types/node": "^26.1.1",
+    "@typescript-eslint/eslint-plugin": "^8.63.0",
+    "@typescript-eslint/parser": "^8.63.0",
+    "astro": "^7.0.6",
     "eslint": "^10.6.0",
     "eslint-plugin-astro": "^2.1.1",
     "globals": "^17.7.0",
@@ -35,7 +35,7 @@
     "prettier": "^3.9.4",
     "sass": "^1.98.0",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.62.1"
+    "typescript-eslint": "^8.63.0"
   },
   "dependencies": {
     "swiper": "^14.0.1"
