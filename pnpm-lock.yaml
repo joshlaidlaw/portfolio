@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       swiper:
-        specifier: ^14.0.2
-        version: 14.0.2
+        specifier: ^14.0.5
+        version: 14.0.5
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.9
@@ -1944,8 +1944,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  swiper@14.0.2:
-    resolution: {integrity: sha512-KRFQZP0zXUh6MEmSQOJKSw27ARqS884OX/dfBz4i2/It9aixL7svh7/Ng0yZ0FE+PrjrW5vzBcjCfmNnq109XQ==}
+  swiper@14.0.5:
+    resolution: {integrity: sha512-SMSKS0sj+lPIFzngfIKb5cyBtzmAuJw7rXgXdyYiDReb+pSpJXuNljHYgT4DXa5Stnl2Ew2/Lam5ipv4PIqZ7A==}
     engines: {node: '>= 4.7.0'}
 
   synckit@0.11.13:
@@ -4187,7 +4187,7 @@ snapshots:
       picocolors: 1.1.1
       sax: 1.6.0
 
-  swiper@14.0.2: {}
+  swiper@14.0.5: {}
 
   synckit@0.11.13:
     dependencies:
