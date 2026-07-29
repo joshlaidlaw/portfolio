@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       swiper:
-        specifier: ^14.0.5
-        version: 14.0.5
+        specifier: ^14.0.6
+        version: 14.0.6
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.9
@@ -2035,8 +2035,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  swiper@14.0.5:
-    resolution: {integrity: sha512-SMSKS0sj+lPIFzngfIKb5cyBtzmAuJw7rXgXdyYiDReb+pSpJXuNljHYgT4DXa5Stnl2Ew2/Lam5ipv4PIqZ7A==}
+  swiper@14.0.6:
+    resolution: {integrity: sha512-ArptjmcZMBvpLCbvzSKuqvQpjjITCbZdymiGOrbZQffQ3ZSjgpvMByXX0WZBUt+FV4PPIumdYfZ9ZdBbFsdH6g==}
     engines: {node: '>= 4.7.0'}
 
   tiny-inflate@1.0.3:
@@ -4312,7 +4312,7 @@ snapshots:
       picocolors: 1.1.1
       sax: 1.6.0
 
-  swiper@14.0.5: {}
+  swiper@14.0.6: {}
 
   tiny-inflate@1.0.3: {}
 

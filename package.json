@@ -38,6 +38,6 @@
     "typescript-eslint": "^8.64.0"
   },
   "dependencies": {
-    "swiper": "^14.0.5"
+    "swiper": "^14.0.6"
   }
 }
