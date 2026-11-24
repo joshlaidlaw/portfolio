@@ -44,7 +44,7 @@ section {
   margin-right: calc(-1 * var(--grid-gutter));
   margin-left: calc(-1 * var(--grid-gutter));
 
-  @media (min-width: var(--breakpoint-xsmall)) {
+  @media (min-width: variables.$xsmall) {
     margin-right: 0;
     margin-left: 0;
   }
@@ -247,7 +247,7 @@ section {
 }
 
 // Small breakpoint (768px)
-@media (min-width: var(--breakpoint-small)) {
+@media (min-width: variables.$small) {
   .container {
     width: 49rem;
   }
@@ -438,7 +438,7 @@ section {
 }
 
 // Medium breakpoint (920px)
-@media (min-width: var(--breakpoint-medium)) {
+@media (min-width: variables.$medium) {
   .container {
     width: 65rem;
   }
@@ -629,7 +629,7 @@ section {
 }
 
 // Large breakpoint (1100px)
-@media (min-width: var(--breakpoint-large)) {
+@media (min-width: variables.$large) {
   .container {
     width: 76rem;
   }
@@ -828,7 +828,7 @@ section {
       margin: 0 auto;
       overflow: hidden;
 
-      @media (min-width: var(--breakpoint-small)) {
+      @media (min-width: variables.$small) {
         @if $i <= 3 {
           margin: 0;
           width: calc(50% - var(--grid-gutter));
@@ -845,7 +845,7 @@ section {
         }
       }
 
-      @media (min-width: var(--breakpoint-medium)) {
+      @media (min-width: variables.$medium) {
         margin: 0;
         width: calc((100% / #{variables.$grid-columns}) * #{$i} - var(--grid-gutter));
         margin-right: var(--grid-gutter);
@@ -859,7 +859,7 @@ section {
         }
       }
 
-      @media (min-width: var(--breakpoint-large)) {
+      @media (min-width: variables.$large) {
         width: calc((100% / #{variables.$grid-columns}) * #{$i} - var(--grid-gutter));
         margin-right: var(--grid-gutter);
 
