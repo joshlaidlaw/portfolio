@@ -8,6 +8,10 @@ updates:
   open-pull-requests-limit: 10
   cooldown:
     default-days: 7
+  ignore:
+    # typescript-eslint and astro check don't support TypeScript 7 yet.
+    - dependency-name: "typescript"
+      update-types: ["version-update:semver-major"]
   groups:
     production-dependencies:
       dependency-type: "production"
